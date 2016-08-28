@@ -15,8 +15,4 @@
 *  Adobe Photoshop CC
 
 #References
-*  Zhiqiang Li, “Study on system of Intelligent Computer Assisted Instruction”, Computer Science and Service System, pp. 1729–1731, IEEE ISBN: 978-1-4244-9762-1, 2011
-*  Cristina Conati, “Intelligent tutoring systems: new challenges and directions”, IJCAI'09 Proceedings of the 21st international joint conference on Artifical intelligence, pp. 2-7, ACM DL 2009
-*  Beverly Park Woolf, “Building Intelligent Interactive Tutors: …”, Elsevier, ISBN 978-0-12-373954-2, 2009
 *  Sergio Andrés Gutiérrez Rojas, http://www.codeproject.com/Articles/239849/Multiple-face-detection-and-recognition-in-real
-*  Stack Overflow http://stackoverflow.com/
