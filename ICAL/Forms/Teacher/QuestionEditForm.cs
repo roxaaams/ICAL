@@ -31,7 +31,7 @@ namespace ICAL_Final.Forms.Teacher
         private ICALDatabaseDataSet.TestQuestionsRow testQuestion;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="testQuestion"> Used to update the selected test question </param>
         /// <param name="callBack"> Used to call a private method from another form </param>
@@ -46,8 +46,8 @@ namespace ICAL_Final.Forms.Teacher
         /// <summary>
         /// Shows the data about the question on the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void QuestionEditForm_Load(object sender, EventArgs e)
         {
             chapterComboBox.SelectedItem = testQuestion.IdChapter.ToString();
@@ -95,7 +95,7 @@ namespace ICAL_Final.Forms.Teacher
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of saving the changes in the database </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -131,7 +131,7 @@ namespace ICAL_Final.Forms.Teacher
         ///  Verifies the user's intent, then deletes the question from the database
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of deleting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var dialogResult = NotificationManager.ConfirmationDelete(Strings.DeleteConfirmation);

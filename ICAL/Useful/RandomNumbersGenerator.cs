@@ -27,7 +27,7 @@ namespace ICAL_Final.Useful
         private int seed;
 
         /// <summary>
-        ///  Initiliazes a new instance of the class 
+        /// Initializes a new instance of the class 
         /// </summary>
         /// <param name="seed"> The seed </param>
         public RandomNumbersGenerator(int seed)

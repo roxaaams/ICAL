@@ -33,7 +33,7 @@ namespace ICAL_Final.Forms.Teacher
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="loggedUser"> Used to know which user adds a new lesson </param>
         /// <param name="callBack"> Used to call a private method from another form </param>
@@ -81,7 +81,7 @@ namespace ICAL_Final.Forms.Teacher
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of creating and inserting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -121,7 +121,7 @@ namespace ICAL_Final.Forms.Teacher
         /// Uploads a new picture for the lesson
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of uploading </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void uploadNewPictureButton_Click(object sender, EventArgs e)
         {
             var fileName = ImageManager.UploadImage(Strings.NewPictureForLesson);

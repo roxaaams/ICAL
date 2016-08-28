@@ -33,7 +33,7 @@ namespace ICAL_Final.Forms.Admin
         private ICALDatabaseDataSet.MoodsRow mood;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="mood"> Used to update the selected mood </param>
         /// <param name="callBack"> Used to call a private method from another form </param>
@@ -48,8 +48,8 @@ namespace ICAL_Final.Forms.Admin
         /// <summary>
         ///  Shows the mood on the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void MoodEditForm_Load(object sender, EventArgs e)
         {
             idTextBox.Text = mood.Id.ToString();
@@ -93,7 +93,7 @@ namespace ICAL_Final.Forms.Admin
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of saving the changes in the database </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void editButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -138,7 +138,7 @@ namespace ICAL_Final.Forms.Admin
         /// Verifies the user's intent, then deletes the mood from the database
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of deleting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var dialogResult = NotificationManager.ConfirmationDelete(Strings.DeleteConfirmation);

@@ -41,7 +41,7 @@ namespace ICAL_Final.Forms.Student
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="idChapter"> Used to know which chapter will be shown </param>
         /// <param name="loggedUser"> Used to check whether the person who will take the evaluation is the same with the one who logged or not </param>
@@ -132,7 +132,7 @@ namespace ICAL_Final.Forms.Student
         ///  Shows the next lesson and if the user is at the last lesson, verifies if the same person is still in front of the webcam
         /// </summary>
         /// <param name="sender"> The button responsible with serving the main intent of showing the next lesson </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void nextButton_Click(object sender, EventArgs e)
         {
             if (indexOfLesson < lessons.Length - 1)
@@ -163,7 +163,7 @@ namespace ICAL_Final.Forms.Student
         ///  Shows the previous lesson
         /// </summary>
         /// <param name="sender"> The button responsible with serving the main intent of showing the previous lesson </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void previousButton_Click(object sender, EventArgs e)
         {
             if (indexOfLesson > 0)
@@ -189,8 +189,8 @@ namespace ICAL_Final.Forms.Student
         /// <summary>
         /// Changes the lesson according to the selected item from the list
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The index which was changed </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void lessonsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             indexOfLesson = lessonsListBox.SelectedIndex;

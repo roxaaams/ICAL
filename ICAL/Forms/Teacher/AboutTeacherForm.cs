@@ -30,7 +30,7 @@ namespace ICAL_Final.Forms.Teacher
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="loggedUser"> Used to update the user who is logged in </param>
         public AboutTeacherForm(ICALDatabaseDataSet.UsersRow loggedUser)
@@ -43,8 +43,8 @@ namespace ICAL_Final.Forms.Teacher
         /// <summary>
         /// Shows the info of the user on the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void AboutTeacherForm_Load(object sender, EventArgs e)
         {
             firstNameTextBox.Text = loggedUser.FirstName;
@@ -93,7 +93,7 @@ namespace ICAL_Final.Forms.Teacher
         /// Updates the current user in the database if the method IsInputValid returns true
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of saving the changes in the database </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())

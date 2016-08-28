@@ -59,7 +59,7 @@
             this.headerLayoutPanel.ColumnCount = 3;
             this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.734807F));
             this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 92.26519F));
-            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.headerLayoutPanel.Controls.Add(this.nameLabel, 2, 0);
             this.headerLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
             this.headerLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -76,9 +76,9 @@
             this.nameLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nameLabel.Location = new System.Drawing.Point(726, 0);
+            this.nameLabel.Location = new System.Drawing.Point(773, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(162, 17);
+            this.nameLabel.Size = new System.Drawing.Size(115, 17);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
@@ -88,7 +88,7 @@
             this.logoPictureBox.Image = global::ICAL_Final.Properties.Resources._7_aplicatie_iconita;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(50, 64);
+            this.logoPictureBox.Size = new System.Drawing.Size(53, 64);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 0;
             this.logoPictureBox.TabStop = false;

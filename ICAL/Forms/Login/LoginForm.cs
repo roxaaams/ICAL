@@ -44,7 +44,7 @@ namespace ICAL_Final
         private ICALDatabaseDataSet.UsersRow[] users;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         public LoginForm()
         {
@@ -99,9 +99,9 @@ namespace ICAL_Final
         ///  Attempts the first authentification if the method IsInputValid returns true
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent to login with the classic method(username&password) </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void loginButton_Click(object sender, EventArgs e)
-        {
+        {   
             if (IsInputValid())
             {
                 var username = usernameTextBox.Text;
@@ -146,8 +146,8 @@ namespace ICAL_Final
         /// <summary>
         /// Opens the web camera and starts the timer for the second authentification
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The button responsible with serving the intent to login with the face recognition </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void startRecognitionButton_Click(object sender, EventArgs e)
         {
             grabber = new Capture();
@@ -163,8 +163,8 @@ namespace ICAL_Final
         /// Sends an image taken with the web camera in every second 
         /// until the initialUser is recognised or the number of seconds reaches 30
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void Timer_Tick(object sender, EventArgs e)
         {
             timeOfFaceRecognition++;
@@ -207,8 +207,8 @@ namespace ICAL_Final
         /// <summary>
         /// Opens the help file
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The menu item responsible with serving the intent to open the help system </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void helpMenuItem_Click(object sender, EventArgs e)
         {
             //TODO: write that help system. The help.txt is still EMPTY.

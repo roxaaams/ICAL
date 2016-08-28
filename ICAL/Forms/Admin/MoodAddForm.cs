@@ -31,7 +31,7 @@ namespace ICAL_Final.Forms.Admin
         private Action refreshCallback;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="callBack"> Used to call a private method from another form </param>
         public MoodAddForm(Action callBack = null)
@@ -77,7 +77,7 @@ namespace ICAL_Final.Forms.Admin
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of creating and inserting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -110,7 +110,7 @@ namespace ICAL_Final.Forms.Admin
         /// Uploads a new face
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of uploading </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void uploadNewFaceButton_Click(object sender, EventArgs e)
         {
             var fileName = ImageManager.UploadImage(Strings.NewMood);

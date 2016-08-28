@@ -59,10 +59,10 @@
             // headerLayoutPanel
             // 
             this.headerLayoutPanel.ColumnCount = 4;
-            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.61677F));
-            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.38323F));
+            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.043218F));
+            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.95678F));
             this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.headerLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.headerLayoutPanel.Controls.Add(this.nameLabel, 2, 0);
             this.headerLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
             this.headerLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,7 +79,7 @@
             this.nameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nameLabel.Location = new System.Drawing.Point(837, 0);
+            this.nameLabel.Location = new System.Drawing.Point(836, 0);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(119, 70);
             this.nameLabel.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.logoPictureBox.Image = global::ICAL_Final.Properties.Resources._7_aplicatie_iconita;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(91, 64);
+            this.logoPictureBox.Size = new System.Drawing.Size(61, 64);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 0;
             this.logoPictureBox.TabStop = false;

@@ -33,7 +33,7 @@ namespace ICAL_Final.Forms.Student
         private Action negativeRefreshCallBack;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="sumOfEmotionsPhases"> Used to know the mood </param>
         /// <param name="positiveCallBack"> Used for the positive sumOfEmotionsPhases </param>
@@ -59,7 +59,7 @@ namespace ICAL_Final.Forms.Student
                 var randomNumbersGenerator = new RandomNumbersGenerator(1);
                 var randomNumbers = randomNumbersGenerator.Generate(0, psycolgicalQuestions.Length - 1, 1);
 
-                facePictureBox.Image = ImageManager.ConvertByteArrayToImage(psycolgicalQuestions[randomNumbers[0]].Question);
+                blobTreePictureBox.Image = ImageManager.ConvertByteArrayToImage(psycolgicalQuestions[randomNumbers[0]].Question);
             }   
         }
 
@@ -86,7 +86,7 @@ namespace ICAL_Final.Forms.Student
         ///  Else, revises the chapter again
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of confirmation </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void confirmAnswerButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -125,8 +125,8 @@ namespace ICAL_Final.Forms.Student
         ///  Accepts only numbers and tab, because the blob tree contains only numbers
         ///  and makes the conversion from string to int easier
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The key which was pressed </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void numberTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), "\\d+") && e.KeyChar.Equals(Keys.Tab))
@@ -138,8 +138,8 @@ namespace ICAL_Final.Forms.Student
         /// <summary>
         /// Doesn't let the first character of the textBox to be "0", because the numbers on the blob trees start always from 1
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void numberTextBox_TextChanged(object sender, EventArgs e)
         {
             if (numberTextBox.Text.StartsWith("0"))
@@ -151,8 +151,8 @@ namespace ICAL_Final.Forms.Student
         /// <summary>
         /// Each time the form is loaded, the view must be refreshed
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void PsychologicalQuestionForm_Load(object sender, EventArgs e)
         {
             RefreshView();

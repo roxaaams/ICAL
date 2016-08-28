@@ -52,7 +52,7 @@
             // 
             this.imageBoxFrameGrabber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.imageBoxFrameGrabber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(734, 303);
+            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(599, 303);
             this.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber";
             this.imageBoxFrameGrabber.Size = new System.Drawing.Size(10, 2);
             this.imageBoxFrameGrabber.TabIndex = 39;
@@ -77,7 +77,7 @@
             this.pictureBox1.Image = global::ICAL_Final.Properties.Resources._4_editare_lectii;
             this.pictureBox1.Location = new System.Drawing.Point(12, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(62, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -108,9 +108,9 @@
             // 
             this.lessonPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.lessonPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lessonPictureBox.Location = new System.Drawing.Point(734, 3);
+            this.lessonPictureBox.Location = new System.Drawing.Point(599, 3);
             this.lessonPictureBox.Name = "lessonPictureBox";
-            this.lessonPictureBox.Size = new System.Drawing.Size(195, 294);
+            this.lessonPictureBox.Size = new System.Drawing.Size(330, 294);
             this.lessonPictureBox.TabIndex = 41;
             this.lessonPictureBox.TabStop = false;
             // 
@@ -121,7 +121,7 @@
             this.nextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.nextButton.Location = new System.Drawing.Point(734, 311);
+            this.nextButton.Location = new System.Drawing.Point(599, 311);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(169, 45);
             this.nextButton.TabIndex = 44;
@@ -135,7 +135,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.83274F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.16727F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 335F));
             this.tableLayoutPanel1.Controls.Add(this.lessonTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lessonPictureBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lessonsListBox, 0, 0);
@@ -158,10 +158,10 @@
             this.lessonTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lessonTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lessonTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lessonTextBox.Location = new System.Drawing.Point(148, 3);
+            this.lessonTextBox.Location = new System.Drawing.Point(121, 3);
             this.lessonTextBox.Name = "lessonTextBox";
             this.lessonTextBox.ReadOnly = true;
-            this.lessonTextBox.Size = new System.Drawing.Size(580, 294);
+            this.lessonTextBox.Size = new System.Drawing.Size(472, 294);
             this.lessonTextBox.TabIndex = 42;
             this.lessonTextBox.Text = "";
             // 
@@ -176,7 +176,7 @@
             this.lessonsListBox.ItemHeight = 23;
             this.lessonsListBox.Location = new System.Drawing.Point(3, 3);
             this.lessonsListBox.Name = "lessonsListBox";
-            this.lessonsListBox.Size = new System.Drawing.Size(139, 294);
+            this.lessonsListBox.Size = new System.Drawing.Size(112, 294);
             this.lessonsListBox.TabIndex = 45;
             this.lessonsListBox.SelectedIndexChanged += new System.EventHandler(this.lessonsListBox_SelectedIndexChanged);
             // 
@@ -187,7 +187,7 @@
             this.previousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousButton.Font = new System.Drawing.Font("Calibri", 13F);
             this.previousButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.previousButton.Location = new System.Drawing.Point(148, 311);
+            this.previousButton.Location = new System.Drawing.Point(121, 311);
             this.previousButton.Name = "previousButton";
             this.previousButton.Size = new System.Drawing.Size(164, 45);
             this.previousButton.TabIndex = 43;

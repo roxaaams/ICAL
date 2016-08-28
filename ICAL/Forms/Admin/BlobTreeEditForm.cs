@@ -33,7 +33,7 @@ namespace ICAL_Final.Forms.Admin
         private ICALDatabaseDataSet.PsychologicalQuestionsRow psychologicalQuestion;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="psychologicalQuestion"> Used to update the selected psychological question (aka blob tree) </param>
         /// <param name="callBack"> Used to call a private method from another form </param>
@@ -48,8 +48,8 @@ namespace ICAL_Final.Forms.Admin
         /// <summary>
         ///  Shows the psychological question on the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void BlobTreeEditForm_Load(object sender, EventArgs e)
         {
             idTextBox.Text = psychologicalQuestion.Id.ToString();
@@ -76,7 +76,7 @@ namespace ICAL_Final.Forms.Admin
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of saving the changes in the database </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void saveButton_Click(object sender, EventArgs e)
         {
             using (var psychologicalQuestionService = new PsychologicalQuestionService())
@@ -103,7 +103,7 @@ namespace ICAL_Final.Forms.Admin
         ///  Verifies the user's intent, then deletes the blob tree from the database
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of deleting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var dialogResult = NotificationManager.ConfirmationDelete(Strings.DeleteConfirmation);
@@ -129,7 +129,7 @@ namespace ICAL_Final.Forms.Admin
         /// Uploads a new drawing which contains a blob tree
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of uploading </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void uploadNewBlobTreeButton_Click(object sender, EventArgs e)
         {
             var fileName = ImageManager.UploadImage(Strings.NewBlobTree);

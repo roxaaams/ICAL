@@ -28,7 +28,7 @@ namespace ICAL_Final.Forms.Student
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="loggedUser"> Used to know the user who is logged in </param>
         public StudentMainForm(ICALDatabaseDataSet.UsersRow loggedUser)
@@ -41,8 +41,8 @@ namespace ICAL_Final.Forms.Student
         /// <summary>
         /// Every time the form is shown, the view must be refreshed
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void StudentMainForm_Shown(object sender, EventArgs e)
         {
             RefreshView();
@@ -55,14 +55,14 @@ namespace ICAL_Final.Forms.Student
         {
             using (var attentedChapterService = new AttendedChapterService())
             {
-                var numberOfAttentedChapters = attentedChapterService.ChaptersAttentedByIdStudent(loggedUser.Id);
+                var numberOfAttendedChapters = attentedChapterService.ChaptersAttentedByIdStudent(loggedUser.Id);
 
                 foreach (var control in Controls)
                 {
                     if (control is Button)
                     {
                         var button = control as Button;
-                        button.Enabled = ShouldEnable(button, numberOfAttentedChapters);
+                        button.Enabled = ShouldEnable(button, numberOfAttendedChapters);
                     }
                 }
             }
@@ -71,21 +71,21 @@ namespace ICAL_Final.Forms.Student
         }
 
         /// <summary>
-        /// Check if the chapters should be enabled 
+        /// Checks if the chapters should be enabled 
         /// </summary>
-        /// <param name="button"></param>
-        /// <param name="numberOfAttentedChapters"></param>
+        /// <param name="button"> The button which must be checked </param>
+        /// <param name="numberOfAttendedChapters"> The number of attended chapters by the user who logged in </param>
         /// <returns> The result of the check </returns>
-        private bool ShouldEnable(Button button, int numberOfAttentedChapters)
+        private bool ShouldEnable(Button button, int numberOfAttendedChapters)
         {
-            return int.Parse(button.Tag.ToString()) <= numberOfAttentedChapters + 1;
+            return int.Parse(button.Tag.ToString()) <= numberOfAttendedChapters + 1;
         }
 
         /// <summary>
         /// Opens the profile of the user
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The label responsible with serving the intent of opening the personal profile </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void nameLabel_Click(object sender, EventArgs e)
         {
             new AboutStudentForm(loggedUser).ShowDialog();
@@ -95,7 +95,7 @@ namespace ICAL_Final.Forms.Student
         /// Opens a LessonForm for the selected chapter
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of viewing the chapter </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void viewChapterButton_Click(object sender, EventArgs e)
         {
             var seeChapterButton = sender as Button;

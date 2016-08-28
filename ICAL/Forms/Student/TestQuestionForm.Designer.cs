@@ -68,9 +68,9 @@
             this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.submitButton.Location = new System.Drawing.Point(39, 219);
+            this.submitButton.Location = new System.Drawing.Point(3, 316);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(180, 50);
+            this.submitButton.Size = new System.Drawing.Size(149, 50);
             this.submitButton.TabIndex = 9;
             this.submitButton.Text = "Submit Answers";
             this.submitButton.UseVisualStyleBackColor = false;
@@ -89,37 +89,38 @@
             // 
             // questionsPanel
             // 
-            this.questionsPanel.AutoScroll = true;
             this.questionsPanel.Controls.Add(this.thirdQuestPanel);
             this.questionsPanel.Controls.Add(this.secondQuestPanel);
             this.questionsPanel.Controls.Add(this.firstQuestPanel);
+            this.questionsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.questionsPanel.Font = new System.Drawing.Font("Calibri", 13F);
-            this.questionsPanel.Location = new System.Drawing.Point(3, 3);
+            this.questionsPanel.Location = new System.Drawing.Point(0, 0);
             this.questionsPanel.Name = "questionsPanel";
-            this.questionsPanel.Size = new System.Drawing.Size(694, 201);
+            this.questionsPanel.Size = new System.Drawing.Size(944, 288);
             this.questionsPanel.TabIndex = 14;
             // 
             // thirdQuestPanel
             // 
-            this.thirdQuestPanel.AutoScroll = true;
             this.thirdQuestPanel.Controls.Add(this.thirdAnsradioButton3);
             this.thirdQuestPanel.Controls.Add(this.thirdAnsradioButton2);
             this.thirdQuestPanel.Controls.Add(this.thirdAnsradioButton1);
             this.thirdQuestPanel.Controls.Add(this.thirdQuestTextBox);
-            this.thirdQuestPanel.Location = new System.Drawing.Point(21, 269);
+            this.thirdQuestPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.thirdQuestPanel.Location = new System.Drawing.Point(0, 204);
             this.thirdQuestPanel.Name = "thirdQuestPanel";
-            this.thirdQuestPanel.Size = new System.Drawing.Size(636, 102);
+            this.thirdQuestPanel.Size = new System.Drawing.Size(944, 96);
             this.thirdQuestPanel.TabIndex = 51;
             this.thirdQuestPanel.Tag = "2";
             // 
             // thirdAnsradioButton3
             // 
             this.thirdAnsradioButton3.AutoSize = true;
+            this.thirdAnsradioButton3.Dock = System.Windows.Forms.DockStyle.Left;
             this.thirdAnsradioButton3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdAnsradioButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thirdAnsradioButton3.Location = new System.Drawing.Point(506, 77);
+            this.thirdAnsradioButton3.Location = new System.Drawing.Point(28, 59);
             this.thirdAnsradioButton3.Name = "thirdAnsradioButton3";
-            this.thirdAnsradioButton3.Size = new System.Drawing.Size(14, 13);
+            this.thirdAnsradioButton3.Size = new System.Drawing.Size(14, 37);
             this.thirdAnsradioButton3.TabIndex = 6;
             this.thirdAnsradioButton3.TabStop = true;
             this.thirdAnsradioButton3.Tag = "c)";
@@ -128,11 +129,12 @@
             // thirdAnsradioButton2
             // 
             this.thirdAnsradioButton2.AutoSize = true;
+            this.thirdAnsradioButton2.Dock = System.Windows.Forms.DockStyle.Left;
             this.thirdAnsradioButton2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdAnsradioButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thirdAnsradioButton2.Location = new System.Drawing.Point(257, 77);
+            this.thirdAnsradioButton2.Location = new System.Drawing.Point(14, 59);
             this.thirdAnsradioButton2.Name = "thirdAnsradioButton2";
-            this.thirdAnsradioButton2.Size = new System.Drawing.Size(14, 13);
+            this.thirdAnsradioButton2.Size = new System.Drawing.Size(14, 37);
             this.thirdAnsradioButton2.TabIndex = 5;
             this.thirdAnsradioButton2.TabStop = true;
             this.thirdAnsradioButton2.Tag = "b)";
@@ -142,11 +144,12 @@
             // 
             this.thirdAnsradioButton1.AutoSize = true;
             this.thirdAnsradioButton1.Checked = true;
+            this.thirdAnsradioButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.thirdAnsradioButton1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdAnsradioButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thirdAnsradioButton1.Location = new System.Drawing.Point(26, 77);
+            this.thirdAnsradioButton1.Location = new System.Drawing.Point(0, 59);
             this.thirdAnsradioButton1.Name = "thirdAnsradioButton1";
-            this.thirdAnsradioButton1.Size = new System.Drawing.Size(14, 13);
+            this.thirdAnsradioButton1.Size = new System.Drawing.Size(14, 37);
             this.thirdAnsradioButton1.TabIndex = 4;
             this.thirdAnsradioButton1.TabStop = true;
             this.thirdAnsradioButton1.Tag = "a)";
@@ -155,14 +158,15 @@
             // thirdQuestTextBox
             // 
             this.thirdQuestTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.thirdQuestTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.thirdQuestTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thirdQuestTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.thirdQuestTextBox.Location = new System.Drawing.Point(15, 14);
+            this.thirdQuestTextBox.Location = new System.Drawing.Point(0, 0);
             this.thirdQuestTextBox.Multiline = true;
             this.thirdQuestTextBox.Name = "thirdQuestTextBox";
             this.thirdQuestTextBox.ReadOnly = true;
-            this.thirdQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.thirdQuestTextBox.Size = new System.Drawing.Size(604, 48);
+            this.thirdQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.thirdQuestTextBox.Size = new System.Drawing.Size(944, 59);
             this.thirdQuestTextBox.TabIndex = 2;
             // 
             // secondQuestPanel
@@ -172,20 +176,22 @@
             this.secondQuestPanel.Controls.Add(this.secondAnsradioButton2);
             this.secondQuestPanel.Controls.Add(this.secondAnsradioButton1);
             this.secondQuestPanel.Controls.Add(this.secondQuestTextBox);
-            this.secondQuestPanel.Location = new System.Drawing.Point(21, 141);
+            this.secondQuestPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.secondQuestPanel.Location = new System.Drawing.Point(0, 102);
             this.secondQuestPanel.Name = "secondQuestPanel";
-            this.secondQuestPanel.Size = new System.Drawing.Size(636, 102);
+            this.secondQuestPanel.Size = new System.Drawing.Size(944, 102);
             this.secondQuestPanel.TabIndex = 50;
             this.secondQuestPanel.Tag = "1";
             // 
             // secondAnsradioButton3
             // 
             this.secondAnsradioButton3.AutoSize = true;
+            this.secondAnsradioButton3.Dock = System.Windows.Forms.DockStyle.Left;
             this.secondAnsradioButton3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondAnsradioButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.secondAnsradioButton3.Location = new System.Drawing.Point(506, 75);
+            this.secondAnsradioButton3.Location = new System.Drawing.Point(28, 59);
             this.secondAnsradioButton3.Name = "secondAnsradioButton3";
-            this.secondAnsradioButton3.Size = new System.Drawing.Size(14, 13);
+            this.secondAnsradioButton3.Size = new System.Drawing.Size(14, 43);
             this.secondAnsradioButton3.TabIndex = 6;
             this.secondAnsradioButton3.TabStop = true;
             this.secondAnsradioButton3.Tag = "c)";
@@ -194,11 +200,12 @@
             // secondAnsradioButton2
             // 
             this.secondAnsradioButton2.AutoSize = true;
+            this.secondAnsradioButton2.Dock = System.Windows.Forms.DockStyle.Left;
             this.secondAnsradioButton2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondAnsradioButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.secondAnsradioButton2.Location = new System.Drawing.Point(257, 75);
+            this.secondAnsradioButton2.Location = new System.Drawing.Point(14, 59);
             this.secondAnsradioButton2.Name = "secondAnsradioButton2";
-            this.secondAnsradioButton2.Size = new System.Drawing.Size(14, 13);
+            this.secondAnsradioButton2.Size = new System.Drawing.Size(14, 43);
             this.secondAnsradioButton2.TabIndex = 5;
             this.secondAnsradioButton2.TabStop = true;
             this.secondAnsradioButton2.Tag = "b)";
@@ -208,11 +215,12 @@
             // 
             this.secondAnsradioButton1.AutoSize = true;
             this.secondAnsradioButton1.Checked = true;
+            this.secondAnsradioButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.secondAnsradioButton1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondAnsradioButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.secondAnsradioButton1.Location = new System.Drawing.Point(26, 75);
+            this.secondAnsradioButton1.Location = new System.Drawing.Point(0, 59);
             this.secondAnsradioButton1.Name = "secondAnsradioButton1";
-            this.secondAnsradioButton1.Size = new System.Drawing.Size(14, 13);
+            this.secondAnsradioButton1.Size = new System.Drawing.Size(14, 43);
             this.secondAnsradioButton1.TabIndex = 4;
             this.secondAnsradioButton1.TabStop = true;
             this.secondAnsradioButton1.Tag = "a)";
@@ -221,14 +229,15 @@
             // secondQuestTextBox
             // 
             this.secondQuestTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.secondQuestTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.secondQuestTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondQuestTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.secondQuestTextBox.Location = new System.Drawing.Point(15, 12);
+            this.secondQuestTextBox.Location = new System.Drawing.Point(0, 0);
             this.secondQuestTextBox.Multiline = true;
             this.secondQuestTextBox.Name = "secondQuestTextBox";
             this.secondQuestTextBox.ReadOnly = true;
-            this.secondQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.secondQuestTextBox.Size = new System.Drawing.Size(604, 48);
+            this.secondQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.secondQuestTextBox.Size = new System.Drawing.Size(944, 59);
             this.secondQuestTextBox.TabIndex = 1;
             // 
             // firstQuestPanel
@@ -238,20 +247,22 @@
             this.firstQuestPanel.Controls.Add(this.firstAnsradioButton2);
             this.firstQuestPanel.Controls.Add(this.firstAnsradioButton1);
             this.firstQuestPanel.Controls.Add(this.firstQuestTextBox);
-            this.firstQuestPanel.Location = new System.Drawing.Point(21, 15);
+            this.firstQuestPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.firstQuestPanel.Location = new System.Drawing.Point(0, 0);
             this.firstQuestPanel.Name = "firstQuestPanel";
-            this.firstQuestPanel.Size = new System.Drawing.Size(636, 102);
+            this.firstQuestPanel.Size = new System.Drawing.Size(944, 102);
             this.firstQuestPanel.TabIndex = 49;
             this.firstQuestPanel.Tag = "0";
             // 
             // firstAnsradioButton3
             // 
             this.firstAnsradioButton3.AutoSize = true;
+            this.firstAnsradioButton3.Dock = System.Windows.Forms.DockStyle.Left;
             this.firstAnsradioButton3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstAnsradioButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.firstAnsradioButton3.Location = new System.Drawing.Point(495, 66);
+            this.firstAnsradioButton3.Location = new System.Drawing.Point(28, 60);
             this.firstAnsradioButton3.Name = "firstAnsradioButton3";
-            this.firstAnsradioButton3.Size = new System.Drawing.Size(14, 13);
+            this.firstAnsradioButton3.Size = new System.Drawing.Size(14, 42);
             this.firstAnsradioButton3.TabIndex = 3;
             this.firstAnsradioButton3.Tag = "c)";
             this.firstAnsradioButton3.UseVisualStyleBackColor = true;
@@ -259,11 +270,12 @@
             // firstAnsradioButton2
             // 
             this.firstAnsradioButton2.AutoSize = true;
+            this.firstAnsradioButton2.Dock = System.Windows.Forms.DockStyle.Left;
             this.firstAnsradioButton2.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstAnsradioButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.firstAnsradioButton2.Location = new System.Drawing.Point(246, 66);
+            this.firstAnsradioButton2.Location = new System.Drawing.Point(14, 60);
             this.firstAnsradioButton2.Name = "firstAnsradioButton2";
-            this.firstAnsradioButton2.Size = new System.Drawing.Size(14, 13);
+            this.firstAnsradioButton2.Size = new System.Drawing.Size(14, 42);
             this.firstAnsradioButton2.TabIndex = 2;
             this.firstAnsradioButton2.TabStop = true;
             this.firstAnsradioButton2.Tag = "b)";
@@ -273,11 +285,12 @@
             // 
             this.firstAnsradioButton1.AutoSize = true;
             this.firstAnsradioButton1.Checked = true;
+            this.firstAnsradioButton1.Dock = System.Windows.Forms.DockStyle.Left;
             this.firstAnsradioButton1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstAnsradioButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.firstAnsradioButton1.Location = new System.Drawing.Point(15, 66);
+            this.firstAnsradioButton1.Location = new System.Drawing.Point(0, 60);
             this.firstAnsradioButton1.Name = "firstAnsradioButton1";
-            this.firstAnsradioButton1.Size = new System.Drawing.Size(14, 13);
+            this.firstAnsradioButton1.Size = new System.Drawing.Size(14, 42);
             this.firstAnsradioButton1.TabIndex = 1;
             this.firstAnsradioButton1.TabStop = true;
             this.firstAnsradioButton1.Tag = "a)";
@@ -286,14 +299,15 @@
             // firstQuestTextBox
             // 
             this.firstQuestTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.firstQuestTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.firstQuestTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstQuestTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.firstQuestTextBox.Location = new System.Drawing.Point(15, 12);
+            this.firstQuestTextBox.Location = new System.Drawing.Point(0, 0);
             this.firstQuestTextBox.Multiline = true;
             this.firstQuestTextBox.Name = "firstQuestTextBox";
             this.firstQuestTextBox.ReadOnly = true;
-            this.firstQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.firstQuestTextBox.Size = new System.Drawing.Size(604, 48);
+            this.firstQuestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.firstQuestTextBox.Size = new System.Drawing.Size(944, 60);
             this.firstQuestTextBox.TabIndex = 0;
             // 
             // evaluationLabel
@@ -313,9 +327,10 @@
             this.statusPanel.Controls.Add(this.pictureBox1);
             this.statusPanel.Controls.Add(this.descriptionLabel);
             this.statusPanel.Controls.Add(this.evaluationLabel);
-            this.statusPanel.Location = new System.Drawing.Point(28, 12);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(944, 83);
             this.statusPanel.TabIndex = 48;
             // 
             // pictureBox1
@@ -335,21 +350,23 @@
             this.bodyPanel.Controls.Add(this.correctAnswersTextBox);
             this.bodyPanel.Controls.Add(this.questionsPanel);
             this.bodyPanel.Controls.Add(this.submitButton);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bodyPanel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bodyPanel.Location = new System.Drawing.Point(28, 101);
+            this.bodyPanel.Location = new System.Drawing.Point(0, 88);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 283);
+            this.bodyPanel.Size = new System.Drawing.Size(944, 369);
             this.bodyPanel.TabIndex = 47;
             // 
             // correctAnswersTextBox
             // 
             this.correctAnswersTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.correctAnswersTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.correctAnswersTextBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.correctAnswersTextBox.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.correctAnswersTextBox.Location = new System.Drawing.Point(357, 219);
+            this.correctAnswersTextBox.Location = new System.Drawing.Point(191, 288);
             this.correctAnswersTextBox.Multiline = true;
             this.correctAnswersTextBox.Name = "correctAnswersTextBox";
-            this.correctAnswersTextBox.Size = new System.Drawing.Size(303, 59);
+            this.correctAnswersTextBox.Size = new System.Drawing.Size(753, 81);
             this.correctAnswersTextBox.TabIndex = 7;
             // 
             // TestQuestionForm
@@ -357,7 +374,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(775, 391);
+            this.ClientSize = new System.Drawing.Size(944, 457);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bodyPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -365,6 +382,7 @@
             this.Name = "TestQuestionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student - Evaluation";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TestQuestionForm_Load);
             this.questionsPanel.ResumeLayout(false);
             this.thirdQuestPanel.ResumeLayout(false);

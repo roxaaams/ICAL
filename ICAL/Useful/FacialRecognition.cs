@@ -25,7 +25,7 @@ namespace ICAL_Final.Useful
         private ICALDatabaseDataSet.UsersRow initialUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the class
+        /// Initializes a new instance of the class
         /// </summary>
         /// <param name="initialUser"> The user who passed the first step of the authentification </param>
         public FacialRecognition(ICALDatabaseDataSet.UsersRow initialUser)

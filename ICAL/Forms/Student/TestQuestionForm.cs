@@ -39,7 +39,7 @@ namespace ICAL_Final.Forms.Student
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="idChapter"> Used to know the selected chapter for evaluation </param>
         /// <param name="loggedUser"> used to know the user who is logged in </param>
@@ -56,8 +56,8 @@ namespace ICAL_Final.Forms.Student
         /// <summary>
         /// Every time the form is shown, the view must be refreshed
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void TestQuestionForm_Load(object sender, EventArgs e)
         {
             RefreshView();
@@ -205,7 +205,7 @@ namespace ICAL_Final.Forms.Student
         /// According to the result of the test, goes further with the evaluation or back to the chapter to revise it
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of submiting the answers </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void submitButton_Click(object sender, EventArgs e)
         {
             var score = ScorePerTest();          

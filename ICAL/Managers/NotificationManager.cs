@@ -27,7 +27,7 @@ namespace ICAL_Final.Managers
         /// <summary>
         ///  Shows a MessageBox which alerts the user
         /// </summary>
-        /// <param name="message"> The message in the box</param>
+        /// <param name="message"> The message in the box </param>
         public static void Alert(string message)
         {
             MessageBox.Show(message, Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -54,7 +54,7 @@ namespace ICAL_Final.Managers
         /// <summary>
         ///  Shows a MessageBox which asks the user to confirm the deletion
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message"> The message in the box </param>
         /// <returns> The dialog result </returns>
         public static bool ConfirmationDelete(string message)
         {

@@ -33,9 +33,9 @@ namespace ICAL_Final.Forms.Admin
         private ICALDatabaseDataSet.UsersRow[] users;
         private ICALDatabaseDataSet.PsychologicalQuestionsRow[] psychologicalQuestions;
         private ICALDatabaseDataSet.MoodsRow[] moods;
-                      
+
         /// <summary>
-        ///  Intiliazes a new instance of the form
+        ///  Initializes a new instance of the form
         /// </summary>
         /// <param name="loggedUser"> Represents the user who is logged in </param>
         public AdminMainForm(ICALDatabaseDataSet.UsersRow loggedUser)
@@ -109,8 +109,8 @@ namespace ICAL_Final.Forms.Admin
         /// <summary>
         /// Every time when this form is shown, the view must be refreshed
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void AdminMainForm_Shown(object sender, EventArgs e)
         {
             RefreshView();
@@ -120,7 +120,7 @@ namespace ICAL_Final.Forms.Admin
         /// Opens a EditForm according to the row selected if the number of rows is not null
         /// </summary>
         /// <param name="sender"> The row of the datView which was clicked twice </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void dataView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (dataView.SelectedRows.Count == 0)
@@ -155,7 +155,7 @@ namespace ICAL_Final.Forms.Admin
         /// Changes the view of the dataView
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of showing the data </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void viewDataButton_Click(object sender, EventArgs e)
         {
             var viewDataButton = sender as Button;
@@ -169,7 +169,7 @@ namespace ICAL_Final.Forms.Admin
         /// Opens an AddForm according to the tag of sender
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of opening an AddForm </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void addDataButton_Click(object sender, EventArgs e)
         {
             var addDataButton = sender as Button;

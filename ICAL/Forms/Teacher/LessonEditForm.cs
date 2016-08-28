@@ -34,7 +34,7 @@ namespace ICAL_Final.Forms.Teacher
         private ICALDatabaseDataSet.UsersRow loggedUser;
 
         /// <summary>
-        /// Initiliazes a new instance of the form
+        /// Initializes a new instance of the form
         /// </summary>
         /// <param name="loggedUser"> Used to know which user updates the current lesson </param>
         /// <param name="lesson"> Used to update the selected lesson </param>
@@ -51,8 +51,8 @@ namespace ICAL_Final.Forms.Teacher
         /// <summary>
         ///  Shows the lesson on the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender"> The sender of the event </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void LessonEditForm_Load(object sender, EventArgs e)
         {
             chapterComboBox.SelectedItem = lesson.IdChapter.ToString();
@@ -101,7 +101,7 @@ namespace ICAL_Final.Forms.Teacher
         /// and calls back the method from the main form
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of saving the changes in the database </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (IsInputValid())
@@ -138,7 +138,7 @@ namespace ICAL_Final.Forms.Teacher
         /// Uploads a new picture for the lesson
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of uploading </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void uploadNewPictureButton_Click(object sender, EventArgs e)
         {
             var fileName = ImageManager.UploadImage(Strings.NewPictureForLesson);
@@ -152,7 +152,7 @@ namespace ICAL_Final.Forms.Teacher
         ///  Verifies the user's intent, then deletes the lesson from the database
         /// </summary>
         /// <param name="sender"> The button responsible with serving the intent of deleting </param>
-        /// <param name="e"></param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var dialogResult = NotificationManager.ConfirmationDelete(Strings.DeleteConfirmation);

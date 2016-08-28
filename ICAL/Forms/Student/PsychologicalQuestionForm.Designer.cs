@@ -32,7 +32,7 @@
             this.confirmAnswerButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.facePictureBox = new System.Windows.Forms.PictureBox();
+            this.blobTreePictureBox = new System.Windows.Forms.PictureBox();
             this.numberTextBox = new System.Windows.Forms.TextBox();
             this.numberLabel = new System.Windows.Forms.Label();
             this.breakTimeLabel = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bodyPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobTreePictureBox)).BeginInit();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bodyPanel.SuspendLayout();
@@ -76,7 +76,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.facePictureBox);
+            this.panel1.Controls.Add(this.blobTreePictureBox);
             this.panel1.Controls.Add(this.numberTextBox);
             this.panel1.Controls.Add(this.numberLabel);
             this.panel1.Font = new System.Drawing.Font("Calibri", 13F);
@@ -85,14 +85,14 @@
             this.panel1.Size = new System.Drawing.Size(694, 228);
             this.panel1.TabIndex = 14;
             // 
-            // facePictureBox
+            // blobTreePictureBox
             // 
-            this.facePictureBox.Location = new System.Drawing.Point(29, 67);
-            this.facePictureBox.Name = "facePictureBox";
-            this.facePictureBox.Size = new System.Drawing.Size(636, 313);
-            this.facePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.facePictureBox.TabIndex = 55;
-            this.facePictureBox.TabStop = false;
+            this.blobTreePictureBox.Location = new System.Drawing.Point(29, 67);
+            this.blobTreePictureBox.Name = "blobTreePictureBox";
+            this.blobTreePictureBox.Size = new System.Drawing.Size(636, 313);
+            this.blobTreePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.blobTreePictureBox.TabIndex = 55;
+            this.blobTreePictureBox.TabStop = false;
             // 
             // numberTextBox
             // 
@@ -177,7 +177,7 @@
             this.Load += new System.EventHandler(this.PsychologicalQuestionForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobTreePictureBox)).EndInit();
             this.statusPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bodyPanel.ResumeLayout(false);
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Button confirmAnswerButton;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox facePictureBox;
+        private System.Windows.Forms.PictureBox blobTreePictureBox;
         private System.Windows.Forms.TextBox numberTextBox;
         private System.Windows.Forms.Label numberLabel;
         private System.Windows.Forms.Label breakTimeLabel;

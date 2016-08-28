@@ -54,9 +54,9 @@
             this.descriptionLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.descriptionLabel.Location = new System.Drawing.Point(185, 88);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(500, 22);
+            this.descriptionLabel.Size = new System.Drawing.Size(535, 22);
             this.descriptionLabel.TabIndex = 36;
-            this.descriptionLabel.Text = "Login to access the Intelligent Computer Assisted Learning - ICAL";
+            this.descriptionLabel.Text = "Login to access ICAL -  Intelligent Computer Assisted Learning";
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // loginLabel

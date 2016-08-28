@@ -23,7 +23,7 @@ namespace ICAL_Final.Useful
         private string recognisedMood;
 
         /// <summary>
-        /// Initiliazes a new instance of the class
+        /// Initializes a new instance of the class
         /// </summary>
         public MoodRecognition()
         {
