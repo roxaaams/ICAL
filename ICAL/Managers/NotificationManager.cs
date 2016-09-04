@@ -22,7 +22,7 @@ using ICAL_Final.Resources;
 
 namespace ICAL_Final.Managers
 {
-    static  class NotificationManager
+    static class NotificationManager
     {
         /// <summary>
         ///  Shows a MessageBox which alerts the user
@@ -30,7 +30,7 @@ namespace ICAL_Final.Managers
         /// <param name="message"> The message in the box </param>
         public static void Alert(string message)
         {
-            MessageBox.Show(message, Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, Strings.AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace ICAL_Final.Managers
         /// <param name="message"> The message in the box </param>
         public static void LogException(string message)
         {
-            MessageBox.Show(message, Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(message, Strings.AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ICAL_Final.Managers
         /// <param name="exception"> The exception of the login</param>
         public static void LogException(Exception exception)
         {
-            MessageBox.Show(exception.Message, Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(exception.Message, Strings.AssemblyTitle, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace ICAL_Final.Managers
         /// <returns> The dialog result </returns>
         public static bool ConfirmationDelete(string message)
         {
-            return (MessageBox.Show(message, Strings.Title, MessageBoxButtons.YesNo) == DialogResult.Yes);
+            return (MessageBox.Show(message, Strings.AssemblyTitle, MessageBoxButtons.YesNo) == DialogResult.Yes);
         }
     }
 }

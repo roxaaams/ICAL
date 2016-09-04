@@ -67,11 +67,13 @@
             // 
             this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.statusPanel.Controls.Add(this.userPictureBox);
+            this.statusPanel.Controls.Add(this.saveButton);
             this.statusPanel.Controls.Add(this.descriptionLabel);
             this.statusPanel.Controls.Add(this.yourProfileLabel);
-            this.statusPanel.Location = new System.Drawing.Point(44, 12);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(783, 83);
             this.statusPanel.TabIndex = 48;
             // 
             // userPictureBox
@@ -110,11 +112,11 @@
             // 
             this.bodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.bodyPanel.Controls.Add(this.panel2);
-            this.bodyPanel.Controls.Add(this.saveButton);
             this.bodyPanel.Controls.Add(this.updateProfilePanel);
-            this.bodyPanel.Location = new System.Drawing.Point(44, 101);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bodyPanel.Location = new System.Drawing.Point(0, 89);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 372);
+            this.bodyPanel.Size = new System.Drawing.Size(783, 388);
             this.bodyPanel.TabIndex = 47;
             // 
             // panel2
@@ -126,10 +128,11 @@
             this.panel2.Controls.Add(this.achievmentsLabel);
             this.panel2.Controls.Add(this.totalScoreTextBox);
             this.panel2.Controls.Add(this.totalScoreLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Font = new System.Drawing.Font("Calibri", 13F);
-            this.panel2.Location = new System.Drawing.Point(363, 3);
+            this.panel2.Location = new System.Drawing.Point(410, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 369);
+            this.panel2.Size = new System.Drawing.Size(373, 388);
             this.panel2.TabIndex = 16;
             // 
             // avancedPictureBox
@@ -198,7 +201,7 @@
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.saveButton.Location = new System.Drawing.Point(64, 314);
+            this.saveButton.Location = new System.Drawing.Point(591, 21);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(180, 50);
             this.saveButton.TabIndex = 15;
@@ -220,10 +223,11 @@
             this.updateProfilePanel.Controls.Add(this.newPasswordLabel);
             this.updateProfilePanel.Controls.Add(this.passwordTextBox);
             this.updateProfilePanel.Controls.Add(this.passwordLabel);
+            this.updateProfilePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.updateProfilePanel.Font = new System.Drawing.Font("Calibri", 13F);
-            this.updateProfilePanel.Location = new System.Drawing.Point(3, 3);
+            this.updateProfilePanel.Location = new System.Drawing.Point(0, 0);
             this.updateProfilePanel.Name = "updateProfilePanel";
-            this.updateProfilePanel.Size = new System.Drawing.Size(334, 295);
+            this.updateProfilePanel.Size = new System.Drawing.Size(404, 388);
             this.updateProfilePanel.TabIndex = 14;
             // 
             // lastNameTextBox
@@ -234,7 +238,7 @@
             this.lastNameTextBox.Location = new System.Drawing.Point(16, 326);
             this.lastNameTextBox.MaxLength = 16;
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(271, 30);
+            this.lastNameTextBox.Size = new System.Drawing.Size(375, 30);
             this.lastNameTextBox.TabIndex = 46;
             // 
             // lastNameLabel
@@ -243,7 +247,7 @@
             this.lastNameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lastNameLabel.Location = new System.Drawing.Point(14, 299);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(269, 22);
+            this.lastNameLabel.Size = new System.Drawing.Size(373, 22);
             this.lastNameLabel.TabIndex = 47;
             this.lastNameLabel.Text = "Last Name";
             // 
@@ -255,7 +259,7 @@
             this.firstNameTextBox.Location = new System.Drawing.Point(16, 254);
             this.firstNameTextBox.MaxLength = 16;
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(269, 30);
+            this.firstNameTextBox.Size = new System.Drawing.Size(373, 30);
             this.firstNameTextBox.TabIndex = 5;
             // 
             // firstNameLabel
@@ -264,7 +268,7 @@
             this.firstNameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.firstNameLabel.Location = new System.Drawing.Point(16, 227);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(269, 22);
+            this.firstNameLabel.Size = new System.Drawing.Size(373, 22);
             this.firstNameLabel.TabIndex = 45;
             this.firstNameLabel.Text = "First Name";
             // 
@@ -276,7 +280,7 @@
             this.confirmNewPasswordTextBox.Location = new System.Drawing.Point(16, 184);
             this.confirmNewPasswordTextBox.MaxLength = 32;
             this.confirmNewPasswordTextBox.Name = "confirmNewPasswordTextBox";
-            this.confirmNewPasswordTextBox.Size = new System.Drawing.Size(269, 30);
+            this.confirmNewPasswordTextBox.Size = new System.Drawing.Size(373, 30);
             this.confirmNewPasswordTextBox.TabIndex = 4;
             this.confirmNewPasswordTextBox.UseSystemPasswordChar = true;
             // 
@@ -286,7 +290,7 @@
             this.confirmNewPasswordLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.confirmNewPasswordLabel.Location = new System.Drawing.Point(16, 157);
             this.confirmNewPasswordLabel.Name = "confirmNewPasswordLabel";
-            this.confirmNewPasswordLabel.Size = new System.Drawing.Size(269, 22);
+            this.confirmNewPasswordLabel.Size = new System.Drawing.Size(373, 22);
             this.confirmNewPasswordLabel.TabIndex = 43;
             this.confirmNewPasswordLabel.Text = "Confirm New Password";
             // 
@@ -299,7 +303,7 @@
             this.newPasswordTextBox.MaxLength = 32;
             this.newPasswordTextBox.Name = "newPasswordTextBox";
             this.newPasswordTextBox.PasswordChar = '•';
-            this.newPasswordTextBox.Size = new System.Drawing.Size(271, 30);
+            this.newPasswordTextBox.Size = new System.Drawing.Size(375, 30);
             this.newPasswordTextBox.TabIndex = 3;
             this.newPasswordTextBox.UseSystemPasswordChar = true;
             // 
@@ -309,7 +313,7 @@
             this.newPasswordLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.newPasswordLabel.Location = new System.Drawing.Point(18, 79);
             this.newPasswordLabel.Name = "newPasswordLabel";
-            this.newPasswordLabel.Size = new System.Drawing.Size(269, 22);
+            this.newPasswordLabel.Size = new System.Drawing.Size(373, 22);
             this.newPasswordLabel.TabIndex = 38;
             this.newPasswordLabel.Text = "New Password";
             // 
@@ -321,7 +325,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(16, 36);
             this.passwordTextBox.MaxLength = 16;
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(271, 30);
+            this.passwordTextBox.Size = new System.Drawing.Size(375, 30);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -331,7 +335,7 @@
             this.passwordLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.passwordLabel.Location = new System.Drawing.Point(18, 9);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(269, 22);
+            this.passwordLabel.Size = new System.Drawing.Size(373, 22);
             this.passwordLabel.TabIndex = 36;
             this.passwordLabel.Text = "Password";
             // 

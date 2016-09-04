@@ -51,11 +51,13 @@
             // 
             this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.statusPanel.Controls.Add(this.pictureBox1);
+            this.statusPanel.Controls.Add(this.addButton);
             this.statusPanel.Controls.Add(this.descriptionLabel);
             this.statusPanel.Controls.Add(this.managementLabel);
-            this.statusPanel.Location = new System.Drawing.Point(44, 3);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(697, 83);
             this.statusPanel.TabIndex = 48;
             // 
             // pictureBox1
@@ -94,10 +96,10 @@
             // 
             this.bodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.bodyPanel.Controls.Add(this.managementPanel);
-            this.bodyPanel.Controls.Add(this.addButton);
-            this.bodyPanel.Location = new System.Drawing.Point(44, 92);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bodyPanel.Location = new System.Drawing.Point(0, 36);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 372);
+            this.bodyPanel.Size = new System.Drawing.Size(697, 312);
             this.bodyPanel.TabIndex = 47;
             // 
             // managementPanel
@@ -108,10 +110,11 @@
             this.managementPanel.Controls.Add(this.uploadNewFaceButton);
             this.managementPanel.Controls.Add(this.facePictureBox);
             this.managementPanel.Controls.Add(this.moodLabel);
+            this.managementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managementPanel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managementPanel.Location = new System.Drawing.Point(10, 3);
+            this.managementPanel.Location = new System.Drawing.Point(0, 0);
             this.managementPanel.Name = "managementPanel";
-            this.managementPanel.Size = new System.Drawing.Size(694, 207);
+            this.managementPanel.Size = new System.Drawing.Size(697, 312);
             this.managementPanel.TabIndex = 14;
             // 
             // moodComboBox
@@ -128,9 +131,9 @@
             this.moodComboBox.Items.AddRange(new object[] {
             "happy",
             "sad"});
-            this.moodComboBox.Location = new System.Drawing.Point(91, 36);
+            this.moodComboBox.Location = new System.Drawing.Point(21, 76);
             this.moodComboBox.Name = "moodComboBox";
-            this.moodComboBox.Size = new System.Drawing.Size(523, 31);
+            this.moodComboBox.Size = new System.Drawing.Size(656, 31);
             this.moodComboBox.TabIndex = 63;
             this.moodComboBox.Text = "happy";
             // 
@@ -141,7 +144,7 @@
             this.uploadNewFaceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uploadNewFaceButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadNewFaceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.uploadNewFaceButton.Location = new System.Drawing.Point(91, 89);
+            this.uploadNewFaceButton.Location = new System.Drawing.Point(164, 135);
             this.uploadNewFaceButton.Name = "uploadNewFaceButton";
             this.uploadNewFaceButton.Size = new System.Drawing.Size(180, 45);
             this.uploadNewFaceButton.TabIndex = 61;
@@ -151,9 +154,9 @@
             // 
             // facePictureBox
             // 
-            this.facePictureBox.Location = new System.Drawing.Point(478, 89);
+            this.facePictureBox.Location = new System.Drawing.Point(403, 135);
             this.facePictureBox.Name = "facePictureBox";
-            this.facePictureBox.Size = new System.Drawing.Size(136, 141);
+            this.facePictureBox.Size = new System.Drawing.Size(139, 141);
             this.facePictureBox.TabIndex = 60;
             this.facePictureBox.TabStop = false;
             // 
@@ -161,9 +164,9 @@
             // 
             this.moodLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moodLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.moodLabel.Location = new System.Drawing.Point(87, 11);
+            this.moodLabel.Location = new System.Drawing.Point(33, 55);
             this.moodLabel.Name = "moodLabel";
-            this.moodLabel.Size = new System.Drawing.Size(520, 22);
+            this.moodLabel.Size = new System.Drawing.Size(68, 29);
             this.moodLabel.TabIndex = 36;
             this.moodLabel.Text = "Mood";
             // 
@@ -174,7 +177,7 @@
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(262, 228);
+            this.addButton.Location = new System.Drawing.Point(497, 21);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(180, 50);
             this.addButton.TabIndex = 9;
@@ -187,7 +190,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(775, 391);
+            this.ClientSize = new System.Drawing.Size(697, 348);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bodyPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

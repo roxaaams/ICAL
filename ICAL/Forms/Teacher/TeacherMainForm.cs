@@ -185,7 +185,7 @@ namespace ICAL_Final.Forms.Teacher
         /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void nameLabel_Click(object sender, EventArgs e)
         {
-            new AboutTeacherForm(loggedUser).ShowDialog();
+            //new AboutTeacherForm(loggedUser).ShowDialog();
         }
     }
 }                        

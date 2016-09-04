@@ -17,6 +17,7 @@
 */
 
 using System;
+using System.Speech.Synthesis;
 using System.Windows.Forms;
 using ICAL_Final.Database;
 using ICAL_Final.Datalayer;
@@ -31,6 +32,7 @@ namespace ICAL_Final.Forms.Student
 {
     public partial class LessonForm : Form
     {
+        private string speechState = "Play";
         private int idChapter;
         private int indexOfLesson = 0;
         private int sumOfEmotionsPhases;
@@ -39,6 +41,7 @@ namespace ICAL_Final.Forms.Student
         private Action refreshCallBack;
         private ICALDatabaseDataSet.LessonsRow[] lessons;
         private ICALDatabaseDataSet.UsersRow loggedUser;
+        private SpeechSynthesizer speechSynthesizer;
 
         /// <summary>
         /// Initializes a new instance of the form
@@ -62,6 +65,9 @@ namespace ICAL_Final.Forms.Student
         /// </summary>
         private void Initialize()
         {
+            speechSynthesizer = new SpeechSynthesizer();
+            speechSynthesizer.SelectVoiceByHints(VoiceGender.Female);
+
             chapterLabel.Text = "CHAPTER " + idChapter.ToString();
 
             sumOfEmotionsPhases = 0;
@@ -70,7 +76,7 @@ namespace ICAL_Final.Forms.Student
             {
                 lessons = lessonService.GetAfterChapter(idChapter);
 
-                lessonTextBox.Text = lessons[0].Lesson;
+                lessonTextBox.Rtf = lessons[0].Lesson;
                 if (lessons[0].Picture != null)
                 {
                     lessonPictureBox.Image = ImageManager.ConvertByteArrayToImage(lessons[0].Picture);
@@ -139,11 +145,7 @@ namespace ICAL_Final.Forms.Student
             {
                 indexOfLesson++;
 
-                lessonTextBox.Text = lessons[indexOfLesson].Lesson;
-                if (lessons[indexOfLesson].Picture != null)
-                {
-                    lessonPictureBox.Image = ImageManager.ConvertByteArrayToImage(lessons[indexOfLesson].Picture);
-                }
+                RefreshLessonContent();
 
                 if (indexOfLesson == lessons.Length - 1)
                 {
@@ -170,11 +172,7 @@ namespace ICAL_Final.Forms.Student
             { 
                 indexOfLesson--;
 
-                lessonTextBox.Text = lessons[indexOfLesson].Lesson;
-                if (lessons[indexOfLesson].Picture != null)
-                {
-                    lessonPictureBox.Image = ImageManager.ConvertByteArrayToImage(lessons[indexOfLesson].Picture);
-                }
+                RefreshLessonContent();
 
                 lessonsListBox.SelectedIndex = indexOfLesson;
                 nextButton.Text = "Next Lesson";
@@ -183,7 +181,6 @@ namespace ICAL_Final.Forms.Student
             {
                 previousButton.Enabled = false;
             }
-              
         }
 
         /// <summary>
@@ -195,11 +192,7 @@ namespace ICAL_Final.Forms.Student
         {
             indexOfLesson = lessonsListBox.SelectedIndex;
 
-            lessonTextBox.Text = lessons[indexOfLesson].Lesson;
-            if (lessons[indexOfLesson].Picture != null)
-            {
-                lessonPictureBox.Image = ImageManager.ConvertByteArrayToImage(lessons[indexOfLesson].Picture);
-            }
+            RefreshLessonContent();
 
             if (indexOfLesson == 0)
             {
@@ -209,6 +202,45 @@ namespace ICAL_Final.Forms.Student
             {
                 nextButton.Text = "Evaluation";
                 previousButton.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        ///  Refreshes the content of the lesson and cancels the speaking
+        /// </summary>
+        private void RefreshLessonContent()
+        {
+            speechButton.BackgroundImage = Properties.Resources.play;
+            speechSynthesizer.SpeakAsyncCancelAll();
+
+            lessonTextBox.Rtf = lessons[indexOfLesson].Lesson;
+            if (lessons[indexOfLesson].Picture != null)
+            {
+                lessonPictureBox.Image = ImageManager.ConvertByteArrayToImage(lessons[indexOfLesson].Picture);
+            }
+        }
+
+        /// <summary>
+        ///  Toggles text to speech play state
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the main intent of converting the text to speech </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void speechButton_Click(object sender, EventArgs e)
+        {
+            if (speechSynthesizer.State == SynthesizerState.Speaking)
+            {
+                speechButton.BackgroundImage = Properties.Resources.play;
+                speechSynthesizer.Pause();
+            }
+            else if ( speechSynthesizer.State == SynthesizerState.Paused)
+            {
+                speechButton.BackgroundImage = Properties.Resources.pause;
+                speechSynthesizer.Resume();
+            }
+            else
+            {
+                speechButton.BackgroundImage = Properties.Resources.pause;
+                speechSynthesizer.SpeakAsync(lessonTextBox.Text);
             }
         }
     }

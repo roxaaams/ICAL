@@ -75,14 +75,14 @@ namespace ICAL_Final.Forms.Admin
                 var username = usernameTextBox.Text;
                 var users = userService.GetAfterUser(username); 
 
-                if(users == null)
+                if(users != null)
                 {
                     NotificationManager.LogException(Strings.TakenUsername);
                     return false;
                 }
             }
 
-             return true;
+            return true;
         }
 
         /// <summary>

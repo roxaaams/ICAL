@@ -50,7 +50,7 @@ namespace ICAL_Final.Forms.Admin
         /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void UserEditForm_Load(object sender, EventArgs e)
         {
-            idTextBox.Text = user.Id.ToString();
+            descriptionLabel.Text += user.Id.ToString();
             firstNameTextBox.Text = user.FirstName;
             lastNameTextBox.Text = user.LastName;
         }

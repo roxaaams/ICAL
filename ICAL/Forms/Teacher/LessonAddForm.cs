@@ -73,6 +73,12 @@ namespace ICAL_Final.Forms.Teacher
                 }
             }
 
+            if (lessonRichTextBox.Text.Length < 1)
+            {
+                NotificationManager.LogException(Strings.InvalidData);
+                return false;
+            }
+
             return true;
         }
 
@@ -92,7 +98,7 @@ namespace ICAL_Final.Forms.Teacher
 
                     lesson.IdChapter = int.Parse(chapterComboBox.SelectedItem.ToString());
                     lesson.Title = titleTextBox.Text;
-                    lesson.Lesson = lessonRichTextBox.Text;
+                    lesson.Lesson = lessonRichTextBox.Rtf;
                     lesson.CreatedByIdTeacher = loggedUser.Id;
                     lesson.UpdatedByIdTeacher = loggedUser.Id;
                     if (newPictureBox.Image != null)
@@ -128,6 +134,93 @@ namespace ICAL_Final.Forms.Teacher
             if (fileName != Strings.NoFile)
             {
                 newPictureBox.Image = new Bitmap(fileName);
+            }
+        }
+
+        /// <summary>
+        /// Changes the font of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the font </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void fontToolStripButton_Click(object sender, EventArgs e)
+        {
+            var font = LessonManager.SetFont(lessonRichTextBox.SelectionFont);
+            lessonRichTextBox.SelectionFont = font;
+        }
+
+        /// <summary>
+        ///  Changes the font style of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the font style </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void fontStyleToolStripButton_Click(object sender, EventArgs e)
+        {
+            var fontStyle = new FontStyle();
+            var elementTag = (sender as ToolStripButton).Tag.ToString();
+            switch (elementTag)
+            {
+                case "Bold": fontStyle = FontStyle.Bold; break;
+                case "Italic": fontStyle = FontStyle.Italic; break;
+                case "Underline": fontStyle = FontStyle.Underline; break;
+                case "Strikeout": fontStyle = FontStyle.Strikeout; break;
+            }
+
+            if (lessonRichTextBox.SelectionFont.Style.Equals(fontStyle))
+            {
+                try
+                {
+                    lessonRichTextBox.SelectionFont = new Font(lessonRichTextBox.SelectionFont, FontStyle.Regular);
+                }
+                catch (ArgumentException exception)
+                {
+                    NotificationManager.LogException(exception.ToString());
+                }
+            }
+            else
+            {
+                try
+                {
+                    lessonRichTextBox.SelectionFont = new Font(lessonRichTextBox.SelectionFont, fontStyle);
+                }
+                catch (ArgumentException exception)
+                {
+                    NotificationManager.LogException(exception.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Changes the color of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the color </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void colorToolStripButton_Click(object sender, EventArgs e)
+        {
+            var color = LessonManager.SetColor();
+            if (color != null)
+            {
+                var elementTag = (sender as ToolStripButton).Tag.ToString();
+                switch (elementTag)
+                {
+                    case "Fore color": lessonRichTextBox.SelectionColor = color; break;
+                    case "Back color": lessonRichTextBox.SelectionBackColor = color; break;
+                }
+            }
+        }
+
+        /// <summary>
+        ///  Changes the align of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the align </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void alignToolStripButton_Click(object sender, EventArgs e)
+        {
+            var elementTag = (sender as ToolStripButton).Tag.ToString();
+            switch (elementTag)
+            {
+                case "Left": lessonRichTextBox.SelectionAlignment = HorizontalAlignment.Left; break;
+                case "Center": lessonRichTextBox.SelectionAlignment = HorizontalAlignment.Center; break;
+                case "Right": lessonRichTextBox.SelectionAlignment = HorizontalAlignment.Right; break;
             }
         }
     }

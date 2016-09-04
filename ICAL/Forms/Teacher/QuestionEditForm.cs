@@ -17,6 +17,8 @@
 */
 
 using System;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ICAL_Final.Database;
 using ICAL_Final.Datalayer;
@@ -50,13 +52,20 @@ namespace ICAL_Final.Forms.Teacher
         /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void QuestionEditForm_Load(object sender, EventArgs e)
         {
+            descriptionLabel.Text += testQuestion.Id.ToString();
             chapterComboBox.SelectedItem = testQuestion.IdChapter.ToString();
             levelComboBox.SelectedItem = testQuestion.Level.ToString();
-            questionTextBox.Text = testQuestion.Question;
+            questionRichTextBox.Rtf = testQuestion.Question;
             firstAnswerTextBox.Text = testQuestion.FirstAnswer;
             secondAnswerTextBox.Text = testQuestion.SecondAnswer;
             thirdAnswerTextBox.Text = testQuestion.ThirdAnswer;
-            correctAnswerComboBox.SelectedItem = testQuestion.CorrectAnswer.ToString();
+
+            foreach (var answerType in managementPanel.Controls.OfType<RadioButton>())
+            {
+                answerType.Checked = (answerType.Tag.ToString() == testQuestion.CorrectAnswer.ToString()) ? true : false;
+                answerType.Text = (answerType.Checked) ? "Correct answer" : "Wrong answer";
+                answerType.ForeColor = (answerType.Checked) ? Colors.greenColor : Colors.redColor;
+            }
         }
 
         /// <summary>
@@ -70,6 +79,15 @@ namespace ICAL_Final.Forms.Teacher
                 if (control is TextBox)
                 {
                     var input = (control as TextBox).Text;
+                    if (input.Length < 1)
+                    {
+                        NotificationManager.LogException(Strings.InvalidData);
+                        return false;
+                    }
+                }
+                else if (control is RichTextBox)
+                {
+                    var input = (control as RichTextBox).Text;
                     if (input.Length < 1)
                     {
                         NotificationManager.LogException(Strings.InvalidData);
@@ -104,11 +122,11 @@ namespace ICAL_Final.Forms.Teacher
                 {
                     testQuestion.IdChapter = int.Parse(chapterComboBox.SelectedItem.ToString());
                     testQuestion.Level = levelComboBox.SelectedItem.ToString();
-                    testQuestion.Question = questionTextBox.Text;
+                    testQuestion.Question = questionRichTextBox.Rtf;
                     testQuestion.FirstAnswer = firstAnswerTextBox.Text;
                     testQuestion.SecondAnswer = secondAnswerTextBox.Text;
                     testQuestion.ThirdAnswer = thirdAnswerTextBox.Text;
-                    testQuestion.CorrectAnswer = correctAnswerComboBox.SelectedItem.ToString();
+                    testQuestion.CorrectAnswer = (managementPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked)).Tag.ToString();
 
                     var saveInstance = testQuestionService.Update(testQuestion);
                     if (saveInstance == null)
@@ -150,6 +168,107 @@ namespace ICAL_Final.Forms.Teacher
                         NotificationManager.Alert(Strings.UpdateError);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Changes the font of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the font </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void fontToolStripButton_Click(object sender, EventArgs e)
+        {
+            var font = LessonManager.SetFont(questionRichTextBox.SelectionFont);
+            questionRichTextBox.SelectionFont = font;
+        }
+
+        /// <summary>
+        ///  Changes the font style of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the font style </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void fontStyleToolStripButton_Click(object sender, EventArgs e)
+        {
+            var fontStyle = new FontStyle();
+            var elementTag = (sender as ToolStripButton).Tag.ToString();
+            switch (elementTag)
+            {
+                case "Bold": fontStyle = FontStyle.Bold; break;
+                case "Italic": fontStyle = FontStyle.Italic; break;
+                case "Underline": fontStyle = FontStyle.Underline; break;
+                case "Strikeout": fontStyle = FontStyle.Strikeout; break;
+            }
+
+            if (questionRichTextBox.SelectionFont.Style.Equals(fontStyle))
+            {
+                try
+                {
+                    questionRichTextBox.SelectionFont = new Font(questionRichTextBox.SelectionFont, FontStyle.Regular);
+                }
+                catch (ArgumentException exception)
+                {
+                    NotificationManager.LogException(exception.ToString());
+                }
+            }
+            else
+            {
+                try
+                {
+                    questionRichTextBox.SelectionFont = new Font(questionRichTextBox.SelectionFont, fontStyle);
+                }
+                catch (ArgumentException exception)
+                {
+                    NotificationManager.LogException(exception.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Changes the color of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the color </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void colorToolStripButton_Click(object sender, EventArgs e)
+        {
+            var color = LessonManager.SetColor();
+            if (color != null)
+            {
+                var elementTag = (sender as ToolStripButton).Tag.ToString();
+                switch (elementTag)
+                {
+                    case "Fore color": questionRichTextBox.SelectionColor = color; break;
+                    case "Back color": questionRichTextBox.SelectionBackColor = color; break;
+                }
+            }
+        }
+
+        /// <summary>
+        ///  Changes the align of the selected text
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the intent of changing the align </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void alignToolStripButton_Click(object sender, EventArgs e)
+        {
+            var elementTag = (sender as ToolStripButton).Tag.ToString();
+            switch (elementTag)
+            {
+                case "Left": questionRichTextBox.SelectionAlignment = HorizontalAlignment.Left; break;
+                case "Center": questionRichTextBox.SelectionAlignment = HorizontalAlignment.Center; break;
+                case "Right": questionRichTextBox.SelectionAlignment = HorizontalAlignment.Right; break;
+            }
+        }
+
+        /// <summary>
+        ///  Updates the correct answer
+        /// </summary>
+        /// <param name="sender"> The radio button which was checked </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void answersRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (var answerType in managementPanel.Controls.OfType<RadioButton>())
+            {
+                answerType.Text = (answerType.Checked) ? "Correct answer" : "Wrong answer";
+                answerType.ForeColor = (answerType.Checked) ? Colors.greenColor : Colors.redColor;
             }
         }
     }

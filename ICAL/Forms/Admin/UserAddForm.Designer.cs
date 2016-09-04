@@ -63,7 +63,7 @@
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(262, 228);
+            this.addButton.Location = new System.Drawing.Point(583, 21);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(180, 50);
             this.addButton.TabIndex = 9;
@@ -76,21 +76,23 @@
             this.lastNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lastNameTextBox.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lastNameTextBox.Location = new System.Drawing.Point(85, 256);
+            this.lastNameTextBox.Location = new System.Drawing.Point(10, 252);
             this.lastNameTextBox.MaxLength = 16;
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(522, 29);
+            this.lastNameTextBox.Size = new System.Drawing.Size(385, 29);
             this.lastNameTextBox.TabIndex = 5;
             // 
             // statusPanel
             // 
             this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.statusPanel.Controls.Add(this.pictureBox1);
+            this.statusPanel.Controls.Add(this.addButton);
             this.statusPanel.Controls.Add(this.descriptionLabel);
             this.statusPanel.Controls.Add(this.managementLabel);
-            this.statusPanel.Location = new System.Drawing.Point(36, 12);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(775, 83);
             this.statusPanel.TabIndex = 46;
             // 
             // pictureBox1
@@ -142,10 +144,11 @@
             this.managementPanel.Controls.Add(this.passwordLabel);
             this.managementPanel.Controls.Add(this.usernameTextBox);
             this.managementPanel.Controls.Add(this.usernameLabel);
+            this.managementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managementPanel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managementPanel.Location = new System.Drawing.Point(3, 3);
+            this.managementPanel.Location = new System.Drawing.Point(0, 0);
             this.managementPanel.Name = "managementPanel";
-            this.managementPanel.Size = new System.Drawing.Size(694, 207);
+            this.managementPanel.Size = new System.Drawing.Size(775, 312);
             this.managementPanel.TabIndex = 14;
             // 
             // uploadNewFaceButton
@@ -155,7 +158,7 @@
             this.uploadNewFaceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uploadNewFaceButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadNewFaceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.uploadNewFaceButton.Location = new System.Drawing.Point(82, 338);
+            this.uploadNewFaceButton.Location = new System.Drawing.Point(426, 19);
             this.uploadNewFaceButton.Name = "uploadNewFaceButton";
             this.uploadNewFaceButton.Size = new System.Drawing.Size(180, 45);
             this.uploadNewFaceButton.TabIndex = 61;
@@ -165,7 +168,7 @@
             // 
             // facePictureBox
             // 
-            this.facePictureBox.Location = new System.Drawing.Point(469, 338);
+            this.facePictureBox.Location = new System.Drawing.Point(619, 19);
             this.facePictureBox.Name = "facePictureBox";
             this.facePictureBox.Size = new System.Drawing.Size(136, 141);
             this.facePictureBox.TabIndex = 60;
@@ -176,7 +179,7 @@
             this.studentRadioButton.AutoSize = true;
             this.studentRadioButton.Checked = true;
             this.studentRadioButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.studentRadioButton.Location = new System.Drawing.Point(518, 294);
+            this.studentRadioButton.Location = new System.Drawing.Point(426, 258);
             this.studentRadioButton.Name = "studentRadioButton";
             this.studentRadioButton.Size = new System.Drawing.Size(88, 27);
             this.studentRadioButton.TabIndex = 59;
@@ -189,7 +192,7 @@
             // 
             this.teacherRadioButton.AutoSize = true;
             this.teacherRadioButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.teacherRadioButton.Location = new System.Drawing.Point(303, 294);
+            this.teacherRadioButton.Location = new System.Drawing.Point(426, 182);
             this.teacherRadioButton.Name = "teacherRadioButton";
             this.teacherRadioButton.Size = new System.Drawing.Size(88, 27);
             this.teacherRadioButton.TabIndex = 58;
@@ -201,7 +204,7 @@
             // 
             this.administratorRadioButton.AutoSize = true;
             this.administratorRadioButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.administratorRadioButton.Location = new System.Drawing.Point(82, 294);
+            this.administratorRadioButton.Location = new System.Drawing.Point(426, 104);
             this.administratorRadioButton.Name = "administratorRadioButton";
             this.administratorRadioButton.Size = new System.Drawing.Size(132, 27);
             this.administratorRadioButton.TabIndex = 57;
@@ -213,9 +216,9 @@
             // 
             this.lastNameLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lastNameLabel.ForeColor = System.Drawing.Color.White;
-            this.lastNameLabel.Location = new System.Drawing.Point(85, 229);
+            this.lastNameLabel.Location = new System.Drawing.Point(10, 225);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(520, 22);
+            this.lastNameLabel.Size = new System.Drawing.Size(383, 22);
             this.lastNameLabel.TabIndex = 45;
             this.lastNameLabel.Text = "Last Name";
             // 
@@ -224,19 +227,19 @@
             this.firstNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.firstNameTextBox.Location = new System.Drawing.Point(85, 186);
+            this.firstNameTextBox.Location = new System.Drawing.Point(10, 182);
             this.firstNameTextBox.MaxLength = 32;
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(522, 30);
+            this.firstNameTextBox.Size = new System.Drawing.Size(385, 30);
             this.firstNameTextBox.TabIndex = 4;
             // 
             // firstNameLabel
             // 
             this.firstNameLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.firstNameLabel.Location = new System.Drawing.Point(85, 159);
+            this.firstNameLabel.Location = new System.Drawing.Point(10, 155);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(520, 22);
+            this.firstNameLabel.Size = new System.Drawing.Size(383, 22);
             this.firstNameLabel.TabIndex = 43;
             this.firstNameLabel.Text = "First Name";
             // 
@@ -245,20 +248,20 @@
             this.passwordTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.passwordTextBox.Location = new System.Drawing.Point(87, 108);
+            this.passwordTextBox.Location = new System.Drawing.Point(12, 104);
             this.passwordTextBox.MaxLength = 32;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '•';
-            this.passwordTextBox.Size = new System.Drawing.Size(520, 30);
+            this.passwordTextBox.Size = new System.Drawing.Size(383, 30);
             this.passwordTextBox.TabIndex = 3;
             // 
             // passwordLabel
             // 
             this.passwordLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.passwordLabel.Location = new System.Drawing.Point(87, 81);
+            this.passwordLabel.Location = new System.Drawing.Point(12, 77);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(520, 22);
+            this.passwordLabel.Size = new System.Drawing.Size(383, 22);
             this.passwordLabel.TabIndex = 38;
             this.passwordLabel.Text = "Password";
             // 
@@ -267,19 +270,19 @@
             this.usernameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.usernameTextBox.Location = new System.Drawing.Point(87, 38);
+            this.usernameTextBox.Location = new System.Drawing.Point(12, 34);
             this.usernameTextBox.MaxLength = 16;
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(520, 30);
+            this.usernameTextBox.Size = new System.Drawing.Size(383, 30);
             this.usernameTextBox.TabIndex = 2;
             // 
             // usernameLabel
             // 
             this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.usernameLabel.Location = new System.Drawing.Point(87, 11);
+            this.usernameLabel.Location = new System.Drawing.Point(12, 7);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(520, 22);
+            this.usernameLabel.Size = new System.Drawing.Size(383, 22);
             this.usernameLabel.TabIndex = 36;
             this.usernameLabel.Text = "Username";
             // 
@@ -287,10 +290,10 @@
             // 
             this.bodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.bodyPanel.Controls.Add(this.managementPanel);
-            this.bodyPanel.Controls.Add(this.addButton);
-            this.bodyPanel.Location = new System.Drawing.Point(36, 101);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bodyPanel.Location = new System.Drawing.Point(0, 79);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 372);
+            this.bodyPanel.Size = new System.Drawing.Size(775, 312);
             this.bodyPanel.TabIndex = 45;
             // 
             // UserAddForm

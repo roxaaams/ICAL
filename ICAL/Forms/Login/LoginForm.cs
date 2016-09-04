@@ -23,6 +23,7 @@ using ICAL_Final.Managers;
 using ICAL_Final.Resources;
 using ICAL_Final.Database;
 using ICAL_Final.Datalayer;
+using ICAL_Final.Forms.About;
 using ICAL_Final.Forms.Admin;
 using ICAL_Final.Forms.Teacher;
 using ICAL_Final.Forms.Student;
@@ -215,5 +216,14 @@ namespace ICAL_Final
             Process.Start("notepad.exe", Application.StartupPath + "/help.txt");
         }
 
+        /// <summary>
+        ///  Opens the form with the assembly info
+        /// </summary>
+        /// <param name="sender"> The menu item responsible with serving the intent to open about form </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void aboutMenuItem_Click(object sender, EventArgs e)
+        {
+            new AboutForm().ShowDialog();
+        }
     }
 }

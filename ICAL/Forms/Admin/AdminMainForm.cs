@@ -22,6 +22,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ICAL_Final.Database;
 using ICAL_Final.Datalayer;
+using ICAL_Final.Forms.About;
 using ICAL_Final.Managers;
 
 namespace ICAL_Final.Forms.Admin
@@ -101,9 +102,7 @@ namespace ICAL_Final.Forms.Admin
 
                     dataView.DataSource = viewModels;
                 }
-            }
-
-            
+            }   
         }
 
         /// <summary>
@@ -187,6 +186,6 @@ namespace ICAL_Final.Forms.Admin
             {
                 new MoodAddForm(RefreshView).ShowDialog();
             }
-        }
+        }  
     }
 }

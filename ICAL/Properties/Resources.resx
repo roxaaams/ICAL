@@ -142,6 +142,9 @@
   <data name="ManagementIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManagementIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="face1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\face1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3 creare intrebari  pentru teste" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3 creare intrebari  pentru teste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="gadge11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gadge11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9 vizualizare intrebari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9 vizualizare intrebari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4 editare lectii" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4 editare lectii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,10 +166,43 @@
   <data name="8 vizualizare lectii" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\8 vizualizare lectii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9 vizualizare intrebari" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9 vizualizare intrebari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="face1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\face1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_align_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-align-center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_align_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-align-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_align_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-align-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_bold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-bold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_color_fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-color-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_color_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-color-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_italic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-italic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_strikethrough" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-strikethrough.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="format_underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

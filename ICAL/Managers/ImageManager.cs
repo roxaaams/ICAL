@@ -28,6 +28,31 @@ namespace ICAL_Final.Managers
     static class ImageManager
     {
         /// <summary>
+        /// Scales a given image
+        /// </summary>
+        /// <param name="source"> The image which must be scaled </param>
+        /// <param name="maxWidth"> The maximal width of the image </param>
+        /// <param name="maxHeight"> The maximal height of the image </param>
+        /// <returns> The result of the scale </returns>
+        public static Image ScaleImage(Image source, int maxWidth, int maxHeight)
+        {
+            var maxRatio = maxWidth / (float)maxHeight;
+            var imageRatio = source.Width / (float)source.Height;
+
+            if (source.Width > maxWidth)
+            {
+                return new Bitmap(source, new Size(maxWidth, (int)Math.Round(maxWidth / imageRatio, 0)));
+            }
+
+            if (source.Height > maxHeight)
+            {
+                return new Bitmap(source, new Size((int)Math.Round(maxWidth * imageRatio, 0), maxHeight));
+            }
+
+            return source;
+        }
+
+        /// <summary>
         ///  Converts a given image into a byte array
         /// </summary>
         /// <param name="imageToConvert"> The image which must be converted </param>

@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ICAL_Final")]
+[assembly: AssemblyTitle("ICAL - Intelligent Computer Assisted Learning")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ICAL_Final")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Colegiul National „Iancu de Hunedoara”, Hunedoara, Romania")]
+[assembly: AssemblyProduct("ICAL - Intelligent Computer Assisted Learning")]
+[assembly: AssemblyCopyright("Copyright © RMS@DP 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

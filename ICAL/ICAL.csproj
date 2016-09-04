@@ -66,6 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +87,12 @@
     <Compile Include="Datalayer\PsychologicalQuestionService.cs" />
     <Compile Include="Datalayer\TestQuestionService.cs" />
     <Compile Include="Datalayer\UserService.cs" />
+    <Compile Include="Forms\About\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\AdminMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,12 +171,6 @@
     <Compile Include="Forms\Student\TestQuestionForm.Designer.cs">
       <DependentUpon>TestQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Teacher\AboutTeacherForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Teacher\AboutTeacherForm.Designer.cs">
-      <DependentUpon>AboutTeacherForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Teacher\LessonAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,13 +208,18 @@
     </Compile>
     <Compile Include="Managers\ImageManager.cs" />
     <Compile Include="Managers\EncryptionManager.cs" />
+    <Compile Include="Managers\LessonManager.cs" />
     <Compile Include="Managers\NotificationManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Colors.cs" />
     <Compile Include="Useful\MoodRecognition.cs" />
     <Compile Include="Resources\Strings.cs" />
     <Compile Include="Useful\FacialRecognition.cs" />
     <Compile Include="Useful\RandomNumbersGenerator.cs" />
+    <EmbeddedResource Include="Forms\About\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student\TestQuestionForm.resx">
       <DependentUpon>TestQuestionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Teacher\AboutTeacherForm.resx">
-      <DependentUpon>AboutTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teacher\LessonAddForm.resx">
       <DependentUpon>LessonAddForm.cs</DependentUpon>
@@ -311,6 +314,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\format-text.png" />
+    <None Include="Resources\format-strikethrough.png" />
+    <None Include="Resources\format-color-fill.png" />
+    <None Include="Resources\format-bold.png" />
+    <None Include="Resources\format-underline.png" />
+    <None Include="Resources\format-italic.png" />
+    <None Include="Resources\format-color-text.png" />
+    <None Include="Resources\format-align-right.png" />
+    <None Include="Resources\format-align-left.png" />
+    <None Include="Resources\format-align-center.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\2.png" />
     <None Include="Resources\face1.bmp" />
     <Content Include="Database\ICALDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

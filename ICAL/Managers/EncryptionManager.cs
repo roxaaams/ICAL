@@ -25,7 +25,7 @@ namespace ICAL_Final.Managers
 {
     static class EncryptionManager
     {
-        private static string EncryptionKey { get { return "ICALIDKYET2016"; } }
+        private static string EncryptionKey { get { return "q?=+L^NQ2016"; } }
 
         /// <summary>
         /// Encrypts the data

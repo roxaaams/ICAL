@@ -97,7 +97,6 @@ C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Student.LessonForm.res
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Student.PsychologicalQuestionForm.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Student.StudentMainForm.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Student.TestQuestionForm.resources
-C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Teacher.AboutTeacherForm.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Teacher.LessonAddForm.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Teacher.LessonEditForm.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Teacher.QuestionAddForm.resources
@@ -106,3 +105,4 @@ C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.Teacher.TeacherMainFor
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Properties.Resources.resources
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL.csproj.GenerateResource.Cache
 C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.exe.licenses
+C:\Users\aaa\Desktop\ICAL\ICAL\obj\Debug\ICAL_Final.Forms.About.AboutForm.resources

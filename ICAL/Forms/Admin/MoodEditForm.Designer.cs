@@ -34,15 +34,13 @@
             this.facePictureBox = new System.Windows.Forms.PictureBox();
             this.moodLabel = new System.Windows.Forms.Label();
             this.statusPanel = new System.Windows.Forms.Panel();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.editButton = new System.Windows.Forms.Button();
             this.managementLabel = new System.Windows.Forms.Label();
             this.bodyPanel = new System.Windows.Forms.Panel();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.managementPanel = new System.Windows.Forms.Panel();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.idLabel = new System.Windows.Forms.Label();
-            this.editButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.facePictureBox)).BeginInit();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,9 +62,9 @@
             this.moodComboBox.Items.AddRange(new object[] {
             "happy",
             "sad"});
-            this.moodComboBox.Location = new System.Drawing.Point(87, 101);
+            this.moodComboBox.Location = new System.Drawing.Point(12, 47);
             this.moodComboBox.Name = "moodComboBox";
-            this.moodComboBox.Size = new System.Drawing.Size(523, 31);
+            this.moodComboBox.Size = new System.Drawing.Size(673, 31);
             this.moodComboBox.TabIndex = 63;
             this.moodComboBox.Text = "happy";
             // 
@@ -77,7 +75,7 @@
             this.uploadNewFaceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uploadNewFaceButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uploadNewFaceButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.uploadNewFaceButton.Location = new System.Drawing.Point(87, 151);
+            this.uploadNewFaceButton.Location = new System.Drawing.Point(170, 112);
             this.uploadNewFaceButton.Name = "uploadNewFaceButton";
             this.uploadNewFaceButton.Size = new System.Drawing.Size(180, 45);
             this.uploadNewFaceButton.TabIndex = 61;
@@ -87,7 +85,7 @@
             // 
             // facePictureBox
             // 
-            this.facePictureBox.Location = new System.Drawing.Point(474, 151);
+            this.facePictureBox.Location = new System.Drawing.Point(419, 112);
             this.facePictureBox.Name = "facePictureBox";
             this.facePictureBox.Size = new System.Drawing.Size(136, 141);
             this.facePictureBox.TabIndex = 60;
@@ -97,22 +95,40 @@
             // 
             this.moodLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moodLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.moodLabel.Location = new System.Drawing.Point(83, 76);
+            this.moodLabel.Location = new System.Drawing.Point(21, 26);
             this.moodLabel.Name = "moodLabel";
-            this.moodLabel.Size = new System.Drawing.Size(520, 22);
+            this.moodLabel.Size = new System.Drawing.Size(65, 27);
             this.moodLabel.TabIndex = 36;
             this.moodLabel.Text = "Mood";
             // 
             // statusPanel
             // 
             this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.statusPanel.Controls.Add(this.deleteButton);
             this.statusPanel.Controls.Add(this.pictureBox1);
             this.statusPanel.Controls.Add(this.descriptionLabel);
+            this.statusPanel.Controls.Add(this.editButton);
             this.statusPanel.Controls.Add(this.managementLabel);
-            this.statusPanel.Location = new System.Drawing.Point(41, 2);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(697, 83);
             this.statusPanel.TabIndex = 50;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(134)))), ((int)(((byte)(44)))));
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteButton.Location = new System.Drawing.Point(505, 21);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(180, 50);
+            this.deleteButton.TabIndex = 16;
+            this.deleteButton.Text = "Delete User";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // pictureBox1
             // 
@@ -130,10 +146,25 @@
             this.descriptionLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.descriptionLabel.Location = new System.Drawing.Point(81, 49);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(350, 22);
+            this.descriptionLabel.Size = new System.Drawing.Size(175, 22);
             this.descriptionLabel.TabIndex = 31;
-            this.descriptionLabel.Text = "Edit mood";
+            this.descriptionLabel.Text = "Edit mood ";
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // editButton
+            // 
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(134)))), ((int)(((byte)(44)))));
+            this.editButton.FlatAppearance.BorderSize = 0;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.White;
+            this.editButton.Location = new System.Drawing.Point(301, 21);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(180, 50);
+            this.editButton.TabIndex = 9;
+            this.editButton.Text = "Save Changes";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // managementLabel
             // 
@@ -149,87 +180,34 @@
             // bodyPanel
             // 
             this.bodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.bodyPanel.Controls.Add(this.deleteButton);
             this.bodyPanel.Controls.Add(this.managementPanel);
-            this.bodyPanel.Controls.Add(this.editButton);
-            this.bodyPanel.Location = new System.Drawing.Point(41, 91);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bodyPanel.Location = new System.Drawing.Point(0, 60);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 372);
+            this.bodyPanel.Size = new System.Drawing.Size(697, 288);
             this.bodyPanel.TabIndex = 49;
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(134)))), ((int)(((byte)(44)))));
-            this.deleteButton.FlatAppearance.BorderSize = 0;
-            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.deleteButton.Location = new System.Drawing.Point(444, 239);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(180, 50);
-            this.deleteButton.TabIndex = 16;
-            this.deleteButton.Text = "Delete User";
-            this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // managementPanel
             // 
             this.managementPanel.AutoScroll = true;
             this.managementPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.managementPanel.Controls.Add(this.idTextBox);
-            this.managementPanel.Controls.Add(this.idLabel);
             this.managementPanel.Controls.Add(this.moodComboBox);
             this.managementPanel.Controls.Add(this.uploadNewFaceButton);
             this.managementPanel.Controls.Add(this.facePictureBox);
             this.managementPanel.Controls.Add(this.moodLabel);
+            this.managementPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.managementPanel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.managementPanel.Location = new System.Drawing.Point(10, 3);
+            this.managementPanel.Location = new System.Drawing.Point(0, 0);
             this.managementPanel.Name = "managementPanel";
-            this.managementPanel.Size = new System.Drawing.Size(694, 207);
+            this.managementPanel.Size = new System.Drawing.Size(697, 288);
             this.managementPanel.TabIndex = 14;
-            // 
-            // idTextBox
-            // 
-            this.idTextBox.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.idTextBox.Location = new System.Drawing.Point(87, 25);
-            this.idTextBox.MaxLength = 32;
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(520, 30);
-            this.idTextBox.TabIndex = 64;
-            // 
-            // idLabel
-            // 
-            this.idLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.idLabel.Location = new System.Drawing.Point(87, 0);
-            this.idLabel.Name = "idLabel";
-            this.idLabel.Size = new System.Drawing.Size(520, 22);
-            this.idLabel.TabIndex = 65;
-            this.idLabel.Text = "Id";
-            // 
-            // editButton
-            // 
-            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(134)))), ((int)(((byte)(44)))));
-            this.editButton.FlatAppearance.BorderSize = 0;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.ForeColor = System.Drawing.Color.White;
-            this.editButton.Location = new System.Drawing.Point(101, 238);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(180, 50);
-            this.editButton.TabIndex = 9;
-            this.editButton.Text = "Save Changes";
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // MoodEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(775, 391);
+            this.ClientSize = new System.Drawing.Size(697, 348);
             this.Controls.Add(this.statusPanel);
             this.Controls.Add(this.bodyPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -242,7 +220,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bodyPanel.ResumeLayout(false);
             this.managementPanel.ResumeLayout(false);
-            this.managementPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -261,7 +238,5 @@
         private System.Windows.Forms.Panel managementPanel;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.Label idLabel;
     }
 }

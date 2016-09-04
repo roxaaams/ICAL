@@ -16,6 +16,9 @@
 # along with ICAL - Intelligent Computer Assisted Learning.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+using System.IO;
+using System.Reflection;
+
 namespace ICAL_Final.Resources
 {
     static class Strings
@@ -25,9 +28,84 @@ namespace ICAL_Final.Resources
         /// </summary>
         /// 
     
-        public static string Title { get { return "ICAL - Intelligent Computer Assisted Learning"; } }
-        public static string Version { get { return "1.0.0.0"; } }
-       
+        //Assembly
+        public static string AssemblyTitle
+        {
+            get
+            {
+                var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                if (attributes.Length > 0)
+                {
+                    var titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    if (titleAttribute.Title != "")
+                    {
+                        return titleAttribute.Title;
+                    }
+                }
+
+                return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+            }
+        }
+        public static string AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        }
+        public static string AssemblyDescription
+        {
+            get
+            {
+                var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "No description";
+                }
+
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+            }
+        }
+        public static string AssemblyProduct
+        {
+            get
+            {
+                var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+        public static string AssemblyCopyright
+        {
+            get
+            {
+                var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "No copyright";
+                }
+
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+            }
+        }
+        public static string AssemblyCompany
+        {
+            get
+            {
+                var attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "No company";
+                }
+
+                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+            }
+        }
+
         // Login form.
         public static string AuthenticationFailed { get { return "Invalid username or password."; } }
         public static string FaceRecognitionFailed { get { return "Could not recognition your face. Please try again."; } }
@@ -68,6 +146,7 @@ namespace ICAL_Final.Resources
         public static string NotSureAboutTheMood { get { return "Well done! We feel like we started to know you and that's really cool. :) Let's see one more drawing."; } }
 
         //Evaluation
+        public static string Level { get { return "Please answer all the questions below. Level: ";  } }
         public static string WellDoneNextToHarderTest { get { return "Awesome! You passed the test! Let's try one harder this time."; } }
         public static string NotPassedHarderTest { get { return "Sadly, you didn't passed this harder test. Despite this, we think you're ready for the next chapter."; } }
         public static string PassedHardestTest { get { return "You passed the hardest test, MASTER! You're more than ready for the next chapter."; } }

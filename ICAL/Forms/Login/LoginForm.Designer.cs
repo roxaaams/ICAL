@@ -39,6 +39,7 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.helpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startRecognitionButton = new System.Windows.Forms.Button();
             this.messageLabel = new System.Windows.Forms.Label();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
@@ -56,7 +57,7 @@
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(535, 22);
             this.descriptionLabel.TabIndex = 36;
-            this.descriptionLabel.Text = "Login to access ICAL -  Intelligent Computer Assisted Learning";
+            this.descriptionLabel.Text = "ICAL -  Intelligent Computer Assisted Learning";
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // loginLabel
@@ -67,7 +68,7 @@
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(500, 33);
             this.loginLabel.TabIndex = 35;
-            this.loginLabel.Text = "LOGIN";
+            this.loginLabel.Text = "AUTHENTICATE";
             this.loginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // loginButton
@@ -134,7 +135,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpMenuItem});
+            this.helpMenuItem,
+            this.aboutMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(770, 29);
@@ -143,11 +145,20 @@
             // 
             // helpMenuItem
             // 
-            this.helpMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.helpMenuItem.Name = "helpMenuItem";
             this.helpMenuItem.Size = new System.Drawing.Size(54, 25);
             this.helpMenuItem.Text = "Help";
             this.helpMenuItem.Click += new System.EventHandler(this.helpMenuItem_Click);
+            // 
+            // aboutMenuItem
+            // 
+            this.aboutMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.aboutMenuItem.Name = "aboutMenuItem";
+            this.aboutMenuItem.Size = new System.Drawing.Size(64, 25);
+            this.aboutMenuItem.Text = "About";
+            this.aboutMenuItem.Click += new System.EventHandler(this.aboutMenuItem_Click);
             // 
             // startRecognitionButton
             // 
@@ -219,7 +230,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Authentication";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).EndInit();
@@ -244,6 +255,7 @@
         private System.Windows.Forms.Button startRecognitionButton;
         private Emgu.CV.UI.ImageBox imageBoxFrameGrabber;
         private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
     }
 }
 

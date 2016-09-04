@@ -53,7 +53,7 @@
             this.confirmAnswerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmAnswerButton.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmAnswerButton.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.confirmAnswerButton.Location = new System.Drawing.Point(253, 237);
+            this.confirmAnswerButton.Location = new System.Drawing.Point(583, 23);
             this.confirmAnswerButton.Name = "confirmAnswerButton";
             this.confirmAnswerButton.Size = new System.Drawing.Size(180, 50);
             this.confirmAnswerButton.TabIndex = 9;
@@ -79,17 +79,18 @@
             this.panel1.Controls.Add(this.blobTreePictureBox);
             this.panel1.Controls.Add(this.numberTextBox);
             this.panel1.Controls.Add(this.numberLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Calibri", 13F);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 228);
+            this.panel1.Size = new System.Drawing.Size(775, 311);
             this.panel1.TabIndex = 14;
             // 
             // blobTreePictureBox
             // 
             this.blobTreePictureBox.Location = new System.Drawing.Point(29, 67);
             this.blobTreePictureBox.Name = "blobTreePictureBox";
-            this.blobTreePictureBox.Size = new System.Drawing.Size(636, 313);
+            this.blobTreePictureBox.Size = new System.Drawing.Size(708, 313);
             this.blobTreePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.blobTreePictureBox.TabIndex = 55;
             this.blobTreePictureBox.TabStop = false;
@@ -102,7 +103,7 @@
             this.numberTextBox.Location = new System.Drawing.Point(29, 25);
             this.numberTextBox.MaxLength = 2;
             this.numberTextBox.Name = "numberTextBox";
-            this.numberTextBox.Size = new System.Drawing.Size(636, 30);
+            this.numberTextBox.Size = new System.Drawing.Size(670, 30);
             this.numberTextBox.TabIndex = 4;
             this.numberTextBox.TextChanged += new System.EventHandler(this.numberTextBox_TextChanged);
             this.numberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberTextBox_KeyPress);
@@ -113,7 +114,7 @@
             this.numberLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.numberLabel.Location = new System.Drawing.Point(25, 0);
             this.numberLabel.Name = "numberLabel";
-            this.numberLabel.Size = new System.Drawing.Size(654, 25);
+            this.numberLabel.Size = new System.Drawing.Size(700, 25);
             this.numberLabel.TabIndex = 43;
             this.numberLabel.Text = "Please write a number from the drawing which represents you the most at the momen" +
     "t:\r\n";
@@ -133,11 +134,13 @@
             // 
             this.statusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.statusPanel.Controls.Add(this.pictureBox1);
+            this.statusPanel.Controls.Add(this.confirmAnswerButton);
             this.statusPanel.Controls.Add(this.descriptionLabel);
             this.statusPanel.Controls.Add(this.breakTimeLabel);
-            this.statusPanel.Location = new System.Drawing.Point(35, 12);
+            this.statusPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusPanel.Location = new System.Drawing.Point(0, 0);
             this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(700, 83);
+            this.statusPanel.Size = new System.Drawing.Size(775, 83);
             this.statusPanel.TabIndex = 48;
             // 
             // pictureBox1
@@ -155,10 +158,10 @@
             // 
             this.bodyPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.bodyPanel.Controls.Add(this.panel1);
-            this.bodyPanel.Controls.Add(this.confirmAnswerButton);
-            this.bodyPanel.Location = new System.Drawing.Point(35, 101);
+            this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bodyPanel.Location = new System.Drawing.Point(0, 88);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(700, 311);
+            this.bodyPanel.Size = new System.Drawing.Size(775, 311);
             this.bodyPanel.TabIndex = 47;
             // 
             // PsychologicalQuestionForm

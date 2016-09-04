@@ -46,13 +46,13 @@ namespace ICAL_Final.Forms.Admin
         }
 
         /// <summary>
-        ///  Shows the psychological question on the form
+        ///  Shows the info about the question on the form
         /// </summary>
         /// <param name="sender"> The sender of the event </param>
         /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
         private void BlobTreeEditForm_Load(object sender, EventArgs e)
         {
-            idTextBox.Text = psychologicalQuestion.Id.ToString();
+            descriptionLabel.Text += psychologicalQuestion.Id.ToString();
             blobTreePictureBox.Image = ImageManager.ConvertByteArrayToImage(psychologicalQuestion.Question);
         }
 

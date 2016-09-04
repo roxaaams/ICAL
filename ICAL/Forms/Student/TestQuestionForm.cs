@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ICAL_Final.Database;
@@ -30,13 +31,17 @@ namespace ICAL_Final.Forms.Student
 {
     public partial class TestQuestionForm : Form
     {
+        private int indexOfQuestion = 0;
+        private int scorePerTest = 0;
         private int idChapter;
         private string level = "medium";
-        private Action refreshCallback;
         private List<int> randomNumbers;
-        private List<int> wrongAnswers = new List<int>();
         private ICALDatabaseDataSet.TestQuestionsRow[] questions;
+
+        private Action refreshCallback;
         private ICALDatabaseDataSet.UsersRow loggedUser;
+
+        private RandomNumbersGenerator randomNumbersGenerator;
 
         /// <summary>
         /// Initializes a new instance of the form
@@ -51,6 +56,8 @@ namespace ICAL_Final.Forms.Student
             this.idChapter = idChapter;
             this.loggedUser = loggedUser;
             refreshCallback = callBack;
+
+            randomNumbersGenerator = new RandomNumbersGenerator(1);
         }
 
         /// <summary>
@@ -68,58 +75,37 @@ namespace ICAL_Final.Forms.Student
         /// </summary>
         private void RefreshView()
         {
+            descriptionLabel.Text = Strings.Level + level;
+            nextButton.Text = "Next Question";
+
+            indexOfQuestion = 0;
+            scorePerTest = 0;
+
             using (var testQuestion = new TestQuestionService())
             {
                 questions = testQuestion.GetAfterChapterAndLevel(idChapter, level);
-
-                var randomNumbersGenerator = new RandomNumbersGenerator(1);
                 randomNumbers = randomNumbersGenerator.Generate(0, questions.Length - 1, 3);
 
-                ShowQuestions(); 
+                ShowQuestion(); 
             }
         }
 
         /// <summary>
-        /// Shows the randomised questions on the form
+        /// Shows the randomised question on the form
         /// </summary>
-        private void ShowQuestions()
+        private void ShowQuestion()
         {
-            correctAnswersTextBox.Text = "";
+            questionLabel.Text = "Question " + indexOfQuestion.ToString();
+            questionRichTextBox.Rtf = questions[randomNumbers[indexOfQuestion]].Question;
+            firstAnswerRadioButton.Text = questions[randomNumbers[indexOfQuestion]].FirstAnswer;
+            secondAnswerRadioButton.Text = questions[randomNumbers[indexOfQuestion]].SecondAnswer;
+            thirdAnswerRadioButton.Text = questions[randomNumbers[indexOfQuestion]].ThirdAnswer;
 
-            foreach (var control in questionsPanel.Controls)
+            foreach (var answerRadioButton in questionPanel.Controls.OfType<RadioButton>())
             {
-                if (control is Panel)
-                {
-                    var panel = control as Panel;
-                    var questionNumber = int.Parse(panel.Tag.ToString());
-
-                    foreach (var childControl in panel.Controls)
-                    {
-                        if (childControl is TextBox)
-                        {
-                            var questionTextBox = childControl as TextBox;
-
-                            questionTextBox.Text = questions[randomNumbers[questionNumber]].Question;
-                        }
-                        else
-                        {
-                            var answerRadioButton = childControl as RadioButton;
-                            var tagOfAnswerRadioButton = answerRadioButton.Tag.ToString();
-                            if (tagOfAnswerRadioButton == "a)")
-                            {
-                                answerRadioButton.Text = questions[randomNumbers[questionNumber]].FirstAnswer;
-                            }
-                            else if (tagOfAnswerRadioButton == "b)")
-                            {
-                                answerRadioButton.Text = questions[randomNumbers[questionNumber]].SecondAnswer;
-                            }
-                            else
-                            {
-                                answerRadioButton.Text = questions[randomNumbers[questionNumber]].ThirdAnswer;
-                            }  
-                        }
-                    }
-                }
+                answerRadioButton.Enabled = true;
+                answerRadioButton.Checked = false;
+                answerRadioButton.ForeColor = Color.WhiteSmoke;
             }
         }
 
@@ -156,109 +142,106 @@ namespace ICAL_Final.Forms.Student
         }
 
         /// <summary>
-        /// Calculates the score per test and updates the list of wrong answers
+        /// Checks the answers
         /// </summary>
-        /// <returns> The result </returns>
-        private int ScorePerTest()
-        {
-            int score = 0;
-
-            foreach (var control in questionsPanel.Controls)
-            {
-                if (control is Panel)
-                {
-                    var panel = control as Panel;
-                    var questionNumber = int.Parse(panel.Tag.ToString());
-
-                    var correctAnswer = questions[randomNumbers[questionNumber]].CorrectAnswer;
-                    var chosenAnswer = panel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-
-                    if (chosenAnswer == correctAnswer)
-                    {
-                        score++;
-                    }
-                    else
-                    {
-                        wrongAnswers.Add(questionNumber);
-                    }
-                }
-            }
-
-            return score;
-        }
-
-        /// <summary>
-        /// Shows the correct answers to the questions where the user has not answered correctly
-        /// </summary>
-        private void ShowCorrectAnswers()
-        {
-            string correctedAnswers = "";
-            foreach (var wrongAnswer in wrongAnswers)
-            {
-                correctedAnswers += "Question " + wrongAnswer.ToString() + "The correct answer is " + questions[randomNumbers[wrongAnswer]].CorrectAnswer.ToString() + Environment.NewLine;
-            }
-
-            correctAnswersTextBox.Text = correctedAnswers;
-        }
-
-        /// <summary>
-        /// According to the result of the test, goes further with the evaluation or back to the chapter to revise it
-        /// </summary>
-        /// <param name="sender"> The button responsible with serving the intent of submiting the answers </param>
+        /// <param name="sender"> The sender which was checked </param>
         /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
-        private void submitButton_Click(object sender, EventArgs e)
+        private void answerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            var score = ScorePerTest();          
-            if (score == 3)
+            var correctAnswer = questions[randomNumbers[indexOfQuestion]].CorrectAnswer;
+
+            foreach (var answerRadioButton in questionPanel.Controls.OfType<RadioButton>())
             {
-                if (level == "medium")
-                {         
-                    level = "hard";
-                    NotificationManager.Alert(Strings.WellDoneNextToHarderTest);
-                    UpdateScoreInDatabase();
-                    RefreshView();
-                }
-                else if (level == "hard")
+                answerRadioButton.Enabled = false;
+
+                var tagOfAnswer = answerRadioButton.Tag.ToString();
+                if (tagOfAnswer == correctAnswer)
                 {
-                    level = "very hard";
-                    NotificationManager.Alert(Strings.WellDoneHarderTest);
-                    UpdateScoreInDatabase();
-                    RefreshView();
-                }
-                else if (level == "very hard")
-                {
-                    NotificationManager.Alert(Strings.PassedHardestTest);
-                    UpdateScoreInDatabase();
+                    answerRadioButton.ForeColor = Colors.greenColor;
+                    scorePerTest++;
                 }
                 else
                 {
-                    NotificationManager.Alert(Strings.PassedEasyTest);
-                    refreshCallback();
-                }
+                    answerRadioButton.ForeColor = Colors.redColor;
+                } 
+            }
+
+
+            if (indexOfQuestion == questions.Length - 1)
+            {
+                nextButton.Text = "Attempt the next test";
+            }
+
+            nextButton.Visible = true;
+
+        }
+
+        /// <summary>
+        ///  Advances the test state
+        /// </summary>
+        /// <param name="sender"> The button responsible with serving the main intent of advancinf the test state </param>
+        /// <param name="e"> The <see cref="EventArgs"/> instance containing the event data </param>
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            if (indexOfQuestion < questions.Length - 1)
+            {
+                indexOfQuestion++;
+
+                ShowQuestion();
             }
             else
             {
-                ShowCorrectAnswers();
-
-                if (level == "medium")
+                if (scorePerTest == 3)
                 {
-                    level = "easy";
-                    NotificationManager.Alert(Strings.NotPassedMediumTest);
-                    RefreshView();
-                }
-                else if (level == "hard" || level == "very hard")
-                {
-                    NotificationManager.Alert(Strings.NotPassedHarderTest);
-                    refreshCallback();
-                    Close();
+                    if (level == "medium")
+                    {
+                        level = "hard";
+                        NotificationManager.Alert(Strings.WellDoneNextToHarderTest);
+                        UpdateScoreInDatabase();
+                        RefreshView();
+                    }
+                    else if (level == "hard")
+                    {
+                        level = "very hard";
+                        NotificationManager.Alert(Strings.WellDoneHarderTest);
+                        UpdateScoreInDatabase();
+                        RefreshView();
+                    }
+                    else if (level == "very hard")
+                    {
+                        NotificationManager.Alert(Strings.PassedHardestTest);
+                        UpdateScoreInDatabase();
+                    }
+                    else
+                    {
+                        NotificationManager.Alert(Strings.PassedEasyTest);
+                        refreshCallback();
+                    }
                 }
                 else
                 {
-                    NotificationManager.Alert(Strings.NotPassedEasyTest);
-                    refreshCallback();
-                    Close();
+                    if (level == "medium")
+                    {
+                        level = "easy";
+                        NotificationManager.Alert(Strings.NotPassedMediumTest);
+                        RefreshView();
+                    }
+                    else if (level == "hard" || level == "very hard")
+                    {
+                        NotificationManager.Alert(Strings.NotPassedHarderTest);
+                        refreshCallback();
+                        Close();
+                    }
+                    else
+                    {
+                        NotificationManager.Alert(Strings.NotPassedEasyTest);
+                        refreshCallback();
+                        Close();
+                    }
                 }
             }
+
+            nextButton.Visible = false;
         }
     }
 }
