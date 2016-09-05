@@ -63,12 +63,12 @@ namespace ICAL_Final
                 var username = usernameTextBox.Text;
                 var password = passwordTextBox.Text;
 
-                if (username.Length == 0)
+                if (username == password)
                 {
                     NotificationManager.LogException(Strings.AuthenticationFailed);
                     return false;
                 }
-                else if (password.Length == 0)
+                else if (username.Length < 1 || password.Length < 1)
                 {
                     NotificationManager.LogException(Strings.AuthenticationFailed);
                     return false;

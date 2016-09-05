@@ -40,6 +40,7 @@
             this.thirdAnswerRadioButton = new System.Windows.Forms.RadioButton();
             this.secondAnswerRadioButton = new System.Windows.Forms.RadioButton();
             this.firstAnswerRadioButton = new System.Windows.Forms.RadioButton();
+            this.scorePerTestLabel = new System.Windows.Forms.Label();
             this.statusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.questionPanel.SuspendLayout();
@@ -103,6 +104,7 @@
             // 
             // questionPanel
             // 
+            this.questionPanel.Controls.Add(this.scorePerTestLabel);
             this.questionPanel.Controls.Add(this.nextButton);
             this.questionPanel.Controls.Add(this.questionLabel);
             this.questionPanel.Controls.Add(this.thirdAnswerRadioButton);
@@ -183,6 +185,16 @@
             this.firstAnswerRadioButton.UseVisualStyleBackColor = true;
             this.firstAnswerRadioButton.CheckedChanged += new System.EventHandler(this.answerRadioButton_CheckedChanged);
             // 
+            // scorePerTestLabel
+            // 
+            this.scorePerTestLabel.AutoSize = true;
+            this.scorePerTestLabel.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scorePerTestLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.scorePerTestLabel.Location = new System.Drawing.Point(107, 299);
+            this.scorePerTestLabel.Name = "scorePerTestLabel";
+            this.scorePerTestLabel.Size = new System.Drawing.Size(0, 23);
+            this.scorePerTestLabel.TabIndex = 55;
+            // 
             // TestQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.RadioButton thirdAnswerRadioButton;
         private System.Windows.Forms.RadioButton secondAnswerRadioButton;
         private System.Windows.Forms.RadioButton firstAnswerRadioButton;
+        private System.Windows.Forms.Label scorePerTestLabel;
     }
 }

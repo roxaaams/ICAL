@@ -20,6 +20,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ICAL_Final.Datalayer;
 using ICAL_Final.Managers;
@@ -70,16 +71,39 @@ namespace ICAL_Final.Forms.Admin
                 }
             }
 
+            var username = usernameTextBox.Text;
+            var password = passwordTextBox.Text;
+
             using (var userService = new UserService())
             {
-                var username = usernameTextBox.Text;
                 var users = userService.GetAfterUser(username); 
-
                 if(users != null)
                 {
                     NotificationManager.LogException(Strings.TakenUsername);
                     return false;
                 }
+            }
+
+            if (username == password)
+            {
+                NotificationManager.LogException(Strings.TakenUsername);
+                return false;
+            }
+
+            var usernameRegex = @"^[a-zA-Z][a-zA-Z0-9_]{5,15}$";
+            var matchUsername = new Regex(usernameRegex);
+            if (!matchUsername.IsMatch(username))
+            {
+                NotificationManager.LogException(Strings.InvalidData);
+                return false;
+            }
+
+            var passwordRegex = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+            var matchPassword = new Regex(passwordRegex);
+            if (!matchPassword.IsMatch(password))
+            {
+                NotificationManager.LogException(Strings.InvalidData);
+                return false;
             }
 
             return true;
@@ -100,7 +124,7 @@ namespace ICAL_Final.Forms.Admin
                     var user = userService.CreateNewEntity();
 
                     user.Username = usernameTextBox.Text;
-                    user.Password = passwordTextBox.Text;
+                    user.Password = EncryptionManager.Encrypt(passwordTextBox.Text);
                     user.FirstName = firstNameTextBox.Text;
                     user.LastName = lastNameTextBox.Text;
                     if (facePictureBox.Image != null)

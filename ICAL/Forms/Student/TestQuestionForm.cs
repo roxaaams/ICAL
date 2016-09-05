@@ -75,7 +75,8 @@ namespace ICAL_Final.Forms.Student
         /// </summary>
         private void RefreshView()
         {
-            descriptionLabel.Text = Strings.Level + level;
+            scorePerTestLabel.Text = "";
+            descriptionLabel.Text = string.Format(Strings.Level, level);
             nextButton.Text = "Next Question";
 
             indexOfQuestion = 0;
@@ -159,6 +160,7 @@ namespace ICAL_Final.Forms.Student
                 {
                     answerRadioButton.ForeColor = Colors.greenColor;
                     scorePerTest++;
+                    scorePerTestLabel.Text = string.Format("Correct answers: ", scorePerTest.ToString(), "/3");
                 }
                 else
                 {
@@ -166,14 +168,12 @@ namespace ICAL_Final.Forms.Student
                 } 
             }
 
-
             if (indexOfQuestion == questions.Length - 1)
             {
                 nextButton.Text = "Attempt the next test";
             }
 
             nextButton.Visible = true;
-
         }
 
         /// <summary>

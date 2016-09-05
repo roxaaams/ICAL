@@ -17,6 +17,8 @@
 */
 
 using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ICAL_Final.Database;
 using ICAL_Final.Datalayer;
@@ -78,7 +80,6 @@ namespace ICAL_Final.Forms.Student
                     beginnerPictureBox.Image = Properties.Resources.gadge22;
                     beginnerPictureBox.Image = Properties.Resources.gadge11;
                 }
-
             }
         }
 
@@ -88,36 +89,50 @@ namespace ICAL_Final.Forms.Student
         /// <returns> The result of the check </returns>
         protected bool IsInputValid()
         {
-            foreach (var control in updateProfilePanel.Controls)
+            foreach (var textBox in updateProfilePanel.Controls.OfType<TextBox>())
             {
-                if (control is TextBox)
+                var input = textBox.Text;
+                if (input.Length < 1)
                 {
-                    var input = (control as TextBox).Text;
-                    if (input.Length < 1)
-                    {
-                        NotificationManager.LogException(Strings.InvalidData);
-                        return false;
-                    }
-                }
+                     NotificationManager.LogException(Strings.InvalidData);
+                     return false;
+                }              
             }
 
-            if (newPasswordTextBox.Text != confirmNewPasswordTextBox.Text)
+            var password = passwordTextBox.Text;
+            var newPassword = newPasswordTextBox.Text;
+            var confirmNewPassword = confirmNewPasswordTextBox.Text;
+
+            if (newPassword != confirmNewPassword)
             {
                     NotificationManager.LogException(Strings.DifferentPasswords);
                     return false;
             }
-            else if (passwordTextBox.Text == newPasswordTextBox.Text)
+            else if (password == newPassword)
             {
                 NotificationManager.LogException(Strings.SamePasswords);
                 return false;
             }
-            else if (passwordTextBox.Text != EncryptionManager.Decrypt(loggedUser.Password))
+            else if (password != EncryptionManager.Decrypt(loggedUser.Password))
             {
                 NotificationManager.LogException(Strings.DifferentPasswords);
                 return false;
             }
+            else if (newPassword == loggedUser.Username)
+            {
+                NotificationManager.LogException(Strings.SameUserPass);
+                return false;
+            }
 
-                return true;  
+            var newPasswordRegex = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+            var matchPassword = new Regex(newPasswordRegex);
+            if (!matchPassword.IsMatch(newPassword))
+            {
+                NotificationManager.LogException(Strings.InvalidData);
+                return false;
+            }
+
+            return true;  
         }
 
         /// <summary>

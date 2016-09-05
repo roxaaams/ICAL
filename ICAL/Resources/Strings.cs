@@ -117,6 +117,7 @@ namespace ICAL_Final.Resources
         public static string NotSamePerson { get { return "The person in the camera is not the same with the introduced username";  } }
 
         // Management
+        public static string SameUserPass { get { return "The username and the password are the same."; } }
         public static string InvalidData { get { return "Invalid data."; } }
         public static string TakenUsername { get { return "The username is already taken. Please try again."; } }
         public static string SamePasswords { get { return "The old password and the new one are the same."; } }
