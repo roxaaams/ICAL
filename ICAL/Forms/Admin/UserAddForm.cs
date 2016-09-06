@@ -77,7 +77,7 @@ namespace ICAL_Final.Forms.Admin
             using (var userService = new UserService())
             {
                 var users = userService.GetAfterUser(username); 
-                if(users != null)
+                if(users == null)
                 {
                     NotificationManager.LogException(Strings.TakenUsername);
                     return false;

@@ -304,7 +304,6 @@
             this.fontToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_text;
             this.fontToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.fontToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fontToolStripButton.Enabled = false;
             this.fontToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("fontToolStripButton.Image")));
             this.fontToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fontToolStripButton.Name = "fontToolStripButton";
@@ -323,7 +322,6 @@
             this.boldToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_bold;
             this.boldToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.boldToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.boldToolStripButton.Enabled = false;
             this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
             this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.boldToolStripButton.Name = "boldToolStripButton";
@@ -337,7 +335,6 @@
             this.italicToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_italic;
             this.italicToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.italicToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.italicToolStripButton.Enabled = false;
             this.italicToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("italicToolStripButton.Image")));
             this.italicToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.italicToolStripButton.Name = "italicToolStripButton";
@@ -351,7 +348,6 @@
             this.underlineToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_underline;
             this.underlineToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.underlineToolStripButton.Enabled = false;
             this.underlineToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("underlineToolStripButton.Image")));
             this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.underlineToolStripButton.Name = "underlineToolStripButton";
@@ -365,7 +361,6 @@
             this.strikeOutToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_strikethrough;
             this.strikeOutToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.strikeOutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.strikeOutToolStripButton.Enabled = false;
             this.strikeOutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("strikeOutToolStripButton.Image")));
             this.strikeOutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.strikeOutToolStripButton.Name = "strikeOutToolStripButton";
@@ -384,7 +379,6 @@
             this.foreColorToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_color_text;
             this.foreColorToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.foreColorToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.foreColorToolStripButton.Enabled = false;
             this.foreColorToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("foreColorToolStripButton.Image")));
             this.foreColorToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.foreColorToolStripButton.Name = "foreColorToolStripButton";
@@ -398,7 +392,6 @@
             this.backColorToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_color_fill;
             this.backColorToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.backColorToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.backColorToolStripButton.Enabled = false;
             this.backColorToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("backColorToolStripButton.Image")));
             this.backColorToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.backColorToolStripButton.Name = "backColorToolStripButton";
@@ -417,7 +410,6 @@
             this.leftAlignToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_align_left;
             this.leftAlignToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.leftAlignToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.leftAlignToolStripButton.Enabled = false;
             this.leftAlignToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("leftAlignToolStripButton.Image")));
             this.leftAlignToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.leftAlignToolStripButton.Name = "leftAlignToolStripButton";
@@ -431,7 +423,6 @@
             this.centerAlignToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_align_center;
             this.centerAlignToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.centerAlignToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.centerAlignToolStripButton.Enabled = false;
             this.centerAlignToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("centerAlignToolStripButton.Image")));
             this.centerAlignToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.centerAlignToolStripButton.Name = "centerAlignToolStripButton";
@@ -445,7 +436,6 @@
             this.rightAlignToolStripButton.BackgroundImage = global::ICAL_Final.Properties.Resources.format_align_right;
             this.rightAlignToolStripButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightAlignToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.rightAlignToolStripButton.Enabled = false;
             this.rightAlignToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("rightAlignToolStripButton.Image")));
             this.rightAlignToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.rightAlignToolStripButton.Name = "rightAlignToolStripButton";

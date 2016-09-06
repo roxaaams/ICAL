@@ -223,5 +223,16 @@ namespace ICAL_Final.Forms.Teacher
                 case "Right": lessonRichTextBox.SelectionAlignment = HorizontalAlignment.Right; break;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var fontDialog = new FontDialog())
+            {
+                if (fontDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    lessonRichTextBox.SelectionFont = fontDialog.Font;
+                }
+            }
+        }
     }
 }

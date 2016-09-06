@@ -32,7 +32,6 @@ namespace ICAL_Final.Forms.Student
 {
     public partial class LessonForm : Form
     {
-        private string speechState = "Play";
         private int idChapter;
         private int indexOfLesson = 0;
         private int sumOfEmotionsPhases;
