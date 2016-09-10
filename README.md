@@ -1,5 +1,5 @@
 # ICAL - Intelligent Computer Assisted Learning
-*  This repository represents the architecture and the basic characteristics of an intelligent e-learning system, hereinafter called “ICAL – Intelligent Computer Assisted Learning”, materialized in learning the programming language Java. Items from the top of current technologies taken from artificial intelligence such as, human face recognition, recognition of human emotions and integrated them into the proposed system, places the latter into the advanced category of ITS (Intelligent Tutoring System). 
+*  This repository represents the architecture and the basic characteristics of an intelligent e-learning system, hereinafter called “ICAL – Intelligent Computer Assisted Learning”, materialized in learning the programming language Java. Items from the top of current researches and technologies such as, modern psychopedagogy elements, facial recognition software and human emotions recognition software integrated them into the proposed system, places the latter into the advanced category of ITS (Intelligent Tutoring System). Advanced hypermedia type elements, such as audio playback of the lessons, offer a modern and useful user interface.
 
 #Team
 *  Roxana Teodora Mafteiu-Scai - Software Architect, "Iancu de Hunedoara" National College
